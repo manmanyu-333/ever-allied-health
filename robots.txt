@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://everalliedhealth.com.au/sitemap.xml

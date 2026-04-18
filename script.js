@@ -274,6 +274,89 @@
 
 
 /* ==========================================================================
+   Contact Form — Formspree Integration
+   ========================================================================== */
+(function () {
+  'use strict';
+
+  const form = document.querySelector('#contact-form');
+  if (!form) return;
+
+  const FORMSPREE_ENDPOINT = 'https://formspree.io/f/mnjldear';
+
+  /* Clear field-level error on input */
+  form.querySelectorAll('input, select, textarea').forEach(function (field) {
+    field.addEventListener('input', function () {
+      field.classList.remove('form-field-error');
+      field.nextElementSibling.textContent = '';
+    });
+  });
+
+  /* Validate all required fields before submit */
+  function validateForm() {
+    let isValid = true;
+    form.querySelectorAll('[required]').forEach(function (field) {
+      if (!field.value.trim()) {
+        field.classList.add('form-field-error');
+        if (field.nextElementSibling && field.nextElementSibling.classList.contains('form-error')) {
+          field.nextElementSibling.textContent = 'This field is required';
+        }
+        isValid = false;
+      }
+    });
+    return isValid;
+  }
+
+  /* Handle form submission */
+  form.addEventListener('submit', async function (e) {
+    e.preventDefault();
+
+    /* Validate form */
+    if (!validateForm()) {
+      return;
+    }
+
+    const submitBtn = form.querySelector('button[type="submit"]');
+    submitBtn.textContent = 'Sending...';
+    submitBtn.disabled = true;
+
+    const data = {
+      name: form.querySelector('[name="name"]').value,
+      contact: form.querySelector('[name="contact"]').value,
+      suburb: form.querySelector('[name="suburb"]').value,
+      funding_type: form.querySelector('[name="funding_type"]').value,
+      notes: form.querySelector('[name="notes"]').value
+    };
+
+    try {
+      const response = await fetch(FORMSPREE_ENDPOINT, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify(data)
+      });
+
+      if (response.ok) {
+        form.style.display = 'none';
+        document.querySelector('#form-success').style.display = 'block';
+        window.scrollTo({ top: document.querySelector('#contact').offsetTop - 80, behavior: 'smooth' });
+      } else {
+        throw new Error('Form submission failed');
+      }
+    } catch (error) {
+      console.error('Form submission error:', error);
+      document.querySelector('#form-error').style.display = 'block';
+      submitBtn.textContent = 'Send Enquiry';
+      submitBtn.disabled = false;
+    }
+  });
+
+})();
+
+
+/* ==========================================================================
    Scroll Reveal
    Elements start hidden (added by JS below) and are revealed by
    IntersectionObserver as they enter the viewport. One-shot: fires once,

@@ -1,10 +1,275 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- ===================================================================
+       CRITICAL META TAGS
+       =================================================================== -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ever Allied Health — Mobile Physiotherapy, Melbourne</title>
-  <meta name="description" content="Mobile physiotherapy for older adults and people living with disability across Melbourne's northern and eastern suburbs. We come to you." />
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="Vanessa Tam, Ever Allied Health">
+
+  <!-- ===================================================================
+       PAGE TITLE & DESCRIPTION
+       =================================================================== -->
+  <title>Ever Allied Health | Mobile Physio Melbourne</title>
+  <meta name="description" content="In-home physiotherapy across Melbourne's northern & eastern suburbs. Led by Vanessa Tam. NDIS registered. Aged care. Rosanna, Heidelberg, Reservoir, Kew & beyond." />
+
+  <!-- ===================================================================
+       LOCATION SIGNALS
+       =================================================================== -->
+  <meta name="geo.region" content="AU-VIC">
+  <meta name="geo.placename" content="Rosanna, Melbourne, Victoria, Australia">
+  <meta name="geo.position" content="-37.7549;145.0630">
+  <meta name="ICBM" content="-37.7549, 145.0630">
+
+  <!-- ===================================================================
+       CANONICAL & PRECONNECT
+       =================================================================== -->
+  <link rel="canonical" href="https://everalliedhealth.com.au/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- ===================================================================
+       OPEN GRAPH TAGS (Social Media)
+       =================================================================== -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Ever Allied Health | Mobile Physiotherapy Melbourne">
+  <meta property="og:description" content="Mobile physiotherapy for older adults and people living with disability across Melbourne. Led by Vanessa Tam. We come to you.">
+  <meta property="og:url" content="https://everalliedhealth.com.au">
+  <meta property="og:site_name" content="Ever Allied Health">
+  <meta property="og:locale" content="en_AU">
+  <meta property="og:image" content="https://everalliedhealth.com.au/og-image.jpg">
+  <!-- TODO: create 1200x630px branded image for og-image.jpg -->
+
+  <!-- ===================================================================
+       TWITTER CARD TAGS
+       =================================================================== -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Ever Allied Health | Mobile Physiotherapy Melbourne">
+  <meta name="twitter:description" content="Mobile physiotherapy for older adults and people living with disability across Melbourne. Led by Vanessa Tam. We come to you.">
+
+  <!-- ===================================================================
+       STRUCTURED DATA — JSON-LD
+       Three separate blocks: LocalBusiness+MedicalBusiness, Person, BreadcrumbList
+       =================================================================== -->
+
+  <!-- BLOCK 1: LocalBusiness + MedicalBusiness Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": ["LocalBusiness", "MedicalBusiness"],
+    "name": "Ever Allied Health",
+    "legalName": "Ever Allied Health",
+    "description": "Mobile physiotherapy practice serving older adults and people living with disability across Melbourne's northern and eastern suburbs. Led by Vanessa Tam, AHPRA registered physiotherapist. NDIS registered and aged care approved. We visit clients at home across Rosanna, Heidelberg, Reservoir, Kew, Brunswick, Thomastown, Fawkner, Eltham, Bulleen and surrounding Melbourne suburbs.",
+    "url": "https://everalliedhealth.com.au",
+    "telephone": "[phone]",
+    "email": "info@everalliedhealth.com.au",
+    "foundingDate": "2024",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Rosanna",
+      "addressLocality": "Rosanna",
+      "addressRegion": "Victoria",
+      "postalCode": "3084",
+      "addressCountry": "AU"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": -37.7549,
+      "longitude": 145.0630
+    },
+    "areaServed": [
+      {"@type": "City", "name": "Melbourne"},
+      {"@type": "AdministrativeArea", "name": "Victoria"},
+      {"@type": "Place", "name": "Rosanna, Melbourne"},
+      {"@type": "Place", "name": "Heidelberg, Melbourne"},
+      {"@type": "Place", "name": "Reservoir, Melbourne"},
+      {"@type": "Place", "name": "Thomastown, Melbourne"},
+      {"@type": "Place", "name": "Fawkner, Melbourne"},
+      {"@type": "Place", "name": "Preston, Melbourne"},
+      {"@type": "Place", "name": "Kew, Melbourne"},
+      {"@type": "Place", "name": "Bulleen, Melbourne"},
+      {"@type": "Place", "name": "Brunswick, Melbourne"},
+      {"@type": "Place", "name": "Eltham, Melbourne"},
+      {"@type": "Place", "name": "Bundoora, Melbourne"},
+      {"@type": "Place", "name": "Macleod, Melbourne"},
+      {"@type": "Place", "name": "Greensborough, Melbourne"},
+      {"@type": "Place", "name": "Watsonia, Melbourne"},
+      {"@type": "Place", "name": "Ivanhoe, Melbourne"},
+      {"@type": "Place", "name": "Doncaster, Melbourne"},
+      {"@type": "Place", "name": "Templestowe, Melbourne"}
+    ],
+    "serviceType": [
+      "Mobile Physiotherapy Melbourne",
+      "In-Home Physiotherapy Melbourne",
+      "NDIS Physiotherapy Melbourne",
+      "Aged Care Physiotherapy Melbourne",
+      "Falls Prevention Melbourne",
+      "Rehabilitation Melbourne",
+      "Disability Support Physiotherapy Melbourne",
+      "Home Care Physiotherapy Melbourne"
+    ],
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Physiotherapy Services Melbourne",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "MedicalTherapy",
+            "name": "In-Home Physiotherapy Assessment Melbourne",
+            "description": "Initial physiotherapy assessment conducted in the client's home across Melbourne's northern and eastern suburbs"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "MedicalTherapy",
+            "name": "NDIS Physiotherapy Melbourne",
+            "description": "Physiotherapy for NDIS participants — self-managed and plan-managed — across Melbourne"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "MedicalTherapy",
+            "name": "Aged Care Physiotherapy Melbourne",
+            "description": "Physiotherapy for older adults across Melbourne's northern and eastern suburbs"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "MedicalTherapy",
+            "name": "Falls Prevention Melbourne",
+            "description": "Evidence-based falls prevention and balance training delivered at home across Melbourne"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "MedicalTherapy",
+            "name": "Private Physiotherapy Melbourne",
+            "description": "Self-funded in-home physiotherapy across Melbourne's northern and eastern suburbs"
+          }
+        }
+      ]
+    },
+    "employee": {
+      "@type": "Person",
+      "name": "Vanessa Tam",
+      "jobTitle": "Principal Physiotherapist",
+      "knowsAbout": [
+        "Physiotherapy",
+        "Aged Care",
+        "NDIS",
+        "Falls Prevention",
+        "Rehabilitation",
+        "Mobile Physiotherapy Melbourne",
+        "Disability Support"
+      ]
+    },
+    "sameAs": [
+      "https://www.facebook.com/everalliedhealth",
+      "https://www.instagram.com/everalliedhealth",
+      "https://www.linkedin.com/company/everalliedhealth"
+    ],
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+      "opens": "08:00",
+      "closes": "18:00"
+    },
+    "priceRange": "$$",
+    "currenciesAccepted": "AUD",
+    "paymentAccepted": "NDIS, Private",
+    "medicalSpecialty": "Physiotherapy",
+    "isAcceptingNewPatients": true
+  }
+  </script>
+
+  <!-- BLOCK 2: Person Schema for Vanessa Tam -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Vanessa Tam",
+    "givenName": "Vanessa",
+    "familyName": "Tam",
+    "jobTitle": "Principal Physiotherapist",
+    "description": "AHPRA registered physiotherapist and founder of Ever Allied Health, specialising in in-home aged care and disability physiotherapy across Melbourne's northern and eastern suburbs.",
+    "url": "https://everalliedhealth.com.au",
+    "worksFor": {
+      "@type": "LocalBusiness",
+      "name": "Ever Allied Health",
+      "url": "https://everalliedhealth.com.au"
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Rosanna",
+      "addressRegion": "Victoria",
+      "addressCountry": "AU"
+    },
+    "areaServed": {
+      "@type": "City",
+      "name": "Melbourne"
+    },
+    "knowsAbout": [
+      "Physiotherapy",
+      "Mobile Physiotherapy",
+      "Aged Care",
+      "NDIS",
+      "Falls Prevention",
+      "Rehabilitation",
+      "Disability Support",
+      "In-Home Therapy"
+    ],
+    "hasCredential": {
+      "@type": "EducationalOccupationalCredential",
+      "credentialCategory": "Professional Registration",
+      "recognizedBy": {
+        "@type": "Organization",
+        "name": "Australian Health Practitioner Regulation Agency (AHPRA)"
+      }
+    }
+  }
+  </script>
+
+  <!-- BLOCK 3: BreadcrumbList Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://everalliedhealth.com.au"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Who We Are",
+        "item": "https://everalliedhealth.com.au/#who-we-are"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Who We See",
+        "item": "https://everalliedhealth.com.au/#who-we-see"
+      },
+      {
+        "@type": "ListItem",
+        "position": 4,
+        "name": "Contact",
+        "item": "https://everalliedhealth.com.au/#contact"
+      }
+    ]
+  }
+  </script>
+
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -17,8 +282,8 @@
 
       <!-- Logo + nav links -->
       <div class="nav-left">
-        <a href="#hero" class="nav-logo" aria-label="Ever Allied Health home">
-          <img src="assets/logo.svg" alt="Ever Allied Health" />
+        <a href="#hero" class="nav-logo" aria-label="Ever Allied Health — mobile physiotherapy Melbourne">
+          <img src="assets/logo.svg" alt="Ever Allied Health — mobile physiotherapy Melbourne" />
         </a>
         <nav aria-label="Main navigation">
           <ul class="nav-links">
@@ -91,7 +356,7 @@
         <!-- Value 1 -->
         <div class="value-block">
           <div class="value-icon">
-            <img src="assets/icon-location.svg" alt="" aria-hidden="true" />
+            <img src="assets/icon-location.svg" alt="Location icon — mobile physiotherapy comes to your home" aria-hidden="true" loading="lazy" />
           </div>
           <h3>We come to you</h3>
           <p>No clinic, no travel, no stress. We deliver physiotherapy in the place where you actually live and move.</p>
@@ -100,7 +365,7 @@
         <!-- Value 2 -->
         <div class="value-block">
           <div class="value-icon">
-            <img src="assets/icon-heart.svg" alt="" aria-hidden="true" />
+            <img src="assets/icon-heart.svg" alt="Heart icon — person-centred, dignified care" aria-hidden="true" loading="lazy" />
           </div>
           <h3>Dignified, person-centred care</h3>
           <p>Our clients are whole people with goals, histories and opinions. We treat them like it.</p>
@@ -109,7 +374,7 @@
         <!-- Value 3 -->
         <div class="value-block">
           <div class="value-icon">
-            <img src="assets/icon-person.svg" alt="" aria-hidden="true" />
+            <img src="assets/icon-person.svg" alt="Person icon — evolving allied health support" aria-hidden="true" loading="lazy" />
           </div>
           <h3>Support that evolves with your needs</h3>
           <p>Starting with physiotherapy and expanding across allied health disciplines, Ever Allied Health is built to support your clients over the long term.</p>
@@ -249,14 +514,14 @@
           <!-- Photo -->
           <div class="team-photo-wrap">
             <!-- TODO: replace with real image -->
-            <div class="img-placeholder">
-              Vanessa — Principal Physiotherapist<br>Photo
+            <div class="img-placeholder" alt="Vanessa Tam, Principal Physiotherapist, Ever Allied Health Melbourne">
+              Vanessa Tam — Principal Physiotherapist<br>Photo
             </div>
           </div>
 
           <!-- Bio -->
           <div class="team-bio">
-            <h3>Vanessa — Principal Physiotherapist</h3>
+            <h3>Vanessa Tam — Principal Physiotherapist</h3>
             <p>Vanessa is a registered physiotherapist with extensive experience in aged care and disability. She founded Ever Allied Health to build something she believes in: a practice where every client is treated as a whole person, not a diagnosis or a funding category.</p>
             <p>She specialises in functional rehabilitation, mobility, falls prevention and in-home therapy for older adults and people living with disability. Her approach is direct, thorough and grounded in what actually works for the individual in front of her.</p>
             <p>Vanessa holds current AHPRA registration and meets all compliance requirements for working within NDIS and aged care settings, including a current police check, NDIS Worker Screening clearance, and up-to-date vaccination status. She holds professional indemnity and public liability insurance.</p>
@@ -345,11 +610,13 @@
       <div class="container">
 
         <h2 class="section-heading">Service Area</h2>
-        <p class="service-area-desc">We are based in Rosanna and service clients across Melbourne's northern and eastern suburbs, including: Fawkner, Thomastown, Reservoir, Heidelberg, Rosanna, Kew, Bulleen, Brunswick, Eltham and surrounding areas.</p>
+
+        <!-- SEO-optimized service area text with all suburbs -->
+        <p class="service-area-desc">Ever Allied Health provides mobile physiotherapy across Melbourne's northern and eastern suburbs including Rosanna, Heidelberg, Reservoir, Thomastown, Fawkner, Preston, Kew, Bulleen, Brunswick, Eltham, Ivanhoe, Bundoora, Doncaster, Templestowe, Greensborough, Watsonia and Macleod, Melbourne. Not sure if we cover your area? Get in touch — we'll always let you know.</p>
 
         <!-- TODO: replace with real Google Maps embed -->
         <div class="map-placeholder">
-          <img src="assets/icon-map.svg" alt="" aria-hidden="true" />
+          <img src="assets/icon-map.svg" alt="Service area map — Ever Allied Health physiotherapy coverage across Melbourne northern and eastern suburbs" />
           <span class="map-label">Google Maps embed — service area</span>
           <span class="map-sublabel">(Placeholder for map integration)</span>
         </div>
@@ -427,20 +694,56 @@
       <h2 class="section-heading">Ready to refer a client?</h2>
       <p class="contact-subtitle">We'll get back to you within one business day.</p>
 
-      <div class="contact-ctas">
-        <!-- TODO: replace href with real phone number -->
-        <a href="tel:+61XXXXXXXXX" class="btn-gold">
-          <img src="assets/icon-phone.svg" alt="" aria-hidden="true" />
-          Call Us
-        </a>
-        <!-- TODO: replace href with real email address -->
-        <a href="mailto:hello@everalliedhealth.com.au" class="btn-gold">
-          <img src="assets/icon-email.svg" alt="" aria-hidden="true" />
-          Email Us
-        </a>
+      <!-- Contact Form -->
+      <form id="contact-form" class="contact-form">
+        <div class="form-group">
+          <label for="name">Referrer / Client Name *</label>
+          <input type="text" id="name" name="name" required aria-required="true">
+          <span class="form-error"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="contact">Phone or Email *</label>
+          <input type="text" id="contact" name="contact" required aria-required="true" placeholder="0412 345 678 or email@example.com">
+          <span class="form-error"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="suburb">Suburb (Melbourne) *</label>
+          <input type="text" id="suburb" name="suburb" required aria-required="true" placeholder="e.g., Rosanna, Heidelberg">
+          <span class="form-error"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="funding_type">Funding Type *</label>
+          <select id="funding_type" name="funding_type" required aria-required="true">
+            <option value="">— Select —</option>
+            <option value="Support at Home">Support at Home (SAH)</option>
+            <option value="NDIS">NDIS (plan-managed or self-managed)</option>
+            <option value="Private">Private</option>
+          </select>
+          <span class="form-error"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="notes">Notes (client details, goals, mobility context) *</label>
+          <textarea id="notes" name="notes" required aria-required="true" rows="5" placeholder="Tell us about your client..."></textarea>
+          <span class="form-error"></span>
+        </div>
+
+        <button type="submit" class="btn-gold">Send Enquiry</button>
+        <div id="form-error" class="form-error-message" style="display: none;">
+          Something went wrong — please email us directly at <a href="mailto:info@everalliedhealth.com.au">info@everalliedhealth.com.au</a>
+        </div>
+      </form>
+
+      <!-- Success Message (hidden by default) -->
+      <div id="form-success" class="form-success-message" style="display: none;">
+        <h3>Thank you.</h3>
+        <p>We'll be in touch within one business day.</p>
       </div>
 
-      <p class="contact-service-area">Service area: Fawkner, Thomastown, Reservoir, Heidelberg, Kew, Bulleen, Brunswick, Eltham, Rosanna and surrounding northern and eastern suburbs.</p>
+      <p class="contact-service-area">Service area: Rosanna, Heidelberg, Reservoir, Thomastown, Fawkner, Preston, Kew, Bulleen, Brunswick, Eltham, Ivanhoe, Bundoora, Doncaster, Templestowe, Greensborough, Watsonia and Macleod, Melbourne.</p>
 
       <div class="contact-footer-bar">
         <p class="contact-copyright">© 2026 Ever Allied Health. Mobile physiotherapy across Melbourne's northern and eastern suburbs.</p>
