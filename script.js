@@ -61,37 +61,37 @@
      * Opacity by size tier. Small orbs are crisp fairy-light points,
      * medium ones glow warmly, large ones are soft ambient halos.
      */
-    const maxOpacity = r < 10 ? 0.80 : r < 28 ? 0.58 : 0.35;
-    const baseOpacity = rand(0.25, maxOpacity);
+    const maxOpacity = r < 10 ? 0.68 : r < 28 ? 0.49 : 0.30;
+    const baseOpacity = rand(0.21, maxOpacity);
 
-    /* Drift: mostly upward, slight random horizontal lean */
-    const speed = rand(0.10, 0.45);
-    const lean  = rand(-0.15, 0.15);
+    /* Drift: slow free-floating in a random direction, gently curving */
+    const speed = rand(0.036, 0.162);
+    const theta = rand(0, Math.PI * 2);        /* random initial direction */
 
     /* Twinkle: each orb pulses on its own slow sine cycle */
-    const twinklePeriod = rand(1800, 5000); /* ms — faster than before for sparkle */
+    const twinklePeriod = rand(3000, 8000); /* ms — slow, meditative pulse */
     const twinklePhase  = rand(0, Math.PI * 2);
     const twinkleDepth  = rand(0.15, 0.40); /* how much it fluctuates */
 
     return {
       x:            rand(0, canvas.width),
-      y:            startAnywhere ? rand(0, canvas.height) : canvas.height + r + 2,
+      y:            rand(0, canvas.height),
       r,
       rgb,
       baseOpacity,
       twinklePeriod,
       twinklePhase,
       twinkleDepth,
-      vx:           lean * speed,
-      vy:           -speed,
+      speed,
+      theta,
     };
   }
 
   resize();
 
-  /* Aim for roughly 1 orb per 8 000 px² of canvas area, min 60 max 110 */
+  /* Aim for roughly 1 orb per 9 400 px² of canvas area, min 51 max 94 */
   function targetCount() {
-    return Math.min(110, Math.max(60, Math.round((canvas.width * canvas.height) / 8000)));
+    return Math.min(94, Math.max(51, Math.round((canvas.width * canvas.height) / 9400)));
   }
 
   let orbs = Array.from({ length: targetCount() }, () => makeOrb(true));
@@ -129,18 +129,16 @@
   }
 
   function stepOrb(orb) {
-    orb.x += orb.vx;
-    orb.y += orb.vy;
+    /* Random-walk the angle each frame — no persistent direction */
+    orb.theta += (Math.random() - 0.5) * 0.06;
+    orb.x += orb.speed * Math.cos(orb.theta);
+    orb.y += orb.speed * Math.sin(orb.theta);
 
-    /* Wrap horizontally */
-    if (orb.x < -orb.r)               orb.x = canvas.width  + orb.r;
-    if (orb.x >  canvas.width + orb.r) orb.x = -orb.r;
-
-    /* When an orb floats off the top, recycle it from the bottom */
-    if (orb.y < -orb.r) {
-      const fresh = makeOrb(false);
-      Object.assign(orb, fresh);
-    }
+    /* Wrap on all four edges */
+    if (orb.x < -orb.r)                  orb.x = canvas.width  + orb.r;
+    if (orb.x >  canvas.width  + orb.r)  orb.x = -orb.r;
+    if (orb.y < -orb.r)                  orb.y = canvas.height + orb.r;
+    if (orb.y >  canvas.height + orb.r)  orb.y = -orb.r;
   }
 
   function frame(ts) {
