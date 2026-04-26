@@ -1373,8 +1373,8 @@ a {
   .who-we-see-header { gap: 32px; }
   .client-grid { grid-template-columns: 1fr; gap: 16px; }
   .who-we-see-intro { font-size: 17px; }
-  .who-we-see-buttons { flex-direction: column; align-items: center; }
-  .btn-wws-primary, .btn-wws-outline { width: 100%; max-width: 280px; }
+  .who-we-see-buttons { flex-direction: column; align-items: stretch; }
+  .btn-wws-primary, .btn-wws-outline { width: 100%; max-width: none; }
 
   /* Funding */
   .funding { padding: 72px 24px; }
