@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="Vanessa Tam, Ever Allied Health">
+
+  <title>Who We Are | Ever Allied Health</title>
+  <meta name="description" content="Learn about Ever Allied Health's philosophy, team and approach to mobile physiotherapy across Melbourne. Led by Vanessa Tam, AHPRA registered physiotherapist." />
+
+  <link rel="canonical" href="https://everalliedhealth.com.au/who-we-are">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link rel="stylesheet" href="styles.css" />
+
+  <style>
+    /* ===================================================================
+       Who We Are — page-specific styles
+       =================================================================== */
+
+    /* Hero text */
+    .wwa-hero {
+      position: relative;
+      min-height: calc(100vh - var(--nav-height));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 80px 24px;
+      overflow: hidden;
+    }
+
+    .wwa-hero-bg {
+      position: absolute;
+      inset: 0;
+      background: url('assets/wwa-hero-bg.jpg') center / cover no-repeat;
+      z-index: 0;
+    }
+
+    .wwa-hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(255, 250, 246, 0.80);
+      z-index: 1;
+    }
+
+    .wwa-hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 1100px;
+      text-align: center;
+    }
+
+    .wwa-hero-content p {
+      font-family: var(--font-serif);
+      font-size: 40px;
+      font-weight: 400;
+      line-height: 1.98;
+      color: var(--color-olive);
+    }
+
+    /* Philosophy section */
+    .wwa-philosophy {
+      background: var(--color-cream-mid);
+      padding: 120px 24px;
+    }
+
+    .wwa-philosophy .container {
+      display: flex;
+      flex-direction: column;
+      gap: 48px;
+    }
+
+    .wwa-philosophy-intro {
+      font-family: var(--font-sans);
+      font-size: 20px;
+      font-weight: 400;
+      line-height: 1.7;
+      color: var(--color-olive-mid);
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .philosophy-cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .philosophy-card {
+      background: var(--color-white);
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .philosophy-card h3 {
+      font-family: var(--font-serif);
+      font-size: 28px;
+      font-weight: 400;
+      line-height: 1.3;
+      color: var(--color-olive-mid);
+    }
+
+    .philosophy-card p {
+      font-family: var(--font-sans);
+      font-size: 17px;
+      font-weight: 400;
+      line-height: 1.7;
+      color: var(--color-olive-mid);
+    }
+
+    /* Why Choose section */
+    .why-choose {
+      background: #3d4a1a;
+      padding: var(--section-pad-v) 60px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 100px;
+    }
+
+    .why-choose-heading {
+      font-family: var(--font-serif);
+      font-size: 50px;
+      font-weight: 400;
+      line-height: 1.2;
+      color: var(--color-gold);
+      text-align: center;
+      max-width: 1038px;
+    }
+
+    .why-choose-grid {
+      display: flex;
+      gap: 100px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .why-choose-block {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 27px;
+      max-width: 406px;
+      text-align: center;
+    }
+
+    .why-choose-block .block-icon {
+      width: 48px;
+      height: 48px;
+      flex-shrink: 0;
+    }
+
+    .why-choose-block h3 {
+      font-family: var(--font-serif);
+      font-size: 28px;
+      font-weight: 400;
+      line-height: 1.3;
+      color: var(--color-white);
+    }
+
+    .why-choose-block p {
+      font-family: var(--font-sans);
+      font-size: 17px;
+      font-weight: 400;
+      line-height: 1.7;
+      color: var(--color-white);
+    }
+
+    /* Responsive — tablet */
+    @media (max-width: 1024px) {
+      .wwa-hero { padding: 80px 32px; }
+      .wwa-hero-content p { font-size: 32px; line-height: 1.75; }
+      .why-choose { padding: 100px 40px; gap: 72px; }
+      .why-choose-grid { gap: 60px; }
+      .wwa-philosophy { padding: 100px 24px; }
+    }
+
+    /* Responsive — mobile */
+    @media (max-width: 768px) {
+      /* Remove viewport min-height on mobile — browser chrome makes 100vh
+         unreliable, causing the section to be taller than visible and the
+         text to appear off-center. Even padding creates true symmetry. */
+      .wwa-hero { min-height: 0; padding: 80px 24px; }
+      .wwa-hero-content p { font-size: 24px; line-height: 1.7; }
+
+      .wwa-philosophy { padding: 72px 24px; }
+      .wwa-philosophy .container { gap: 32px; }
+      .wwa-philosophy-intro { text-align: center; }
+      .philosophy-cards { grid-template-columns: 1fr; }
+      .philosophy-card { text-align: center; padding: 32px 24px; }
+
+      .why-choose { padding: 72px 24px; gap: 56px; }
+      .why-choose-grid { flex-direction: column; align-items: center; gap: 48px; }
+      .why-choose-heading { font-size: 32px; text-align: center; }
+      .why-choose-block { max-width: 100%; text-align: center; }
+
+      /* Team bio — center all text when stacked single-column */
+      .team-bio { text-align: center; align-items: center; }
+      .team-bio h3 { text-align: center; }
+      .team-bio p { text-align: center; }
+      .team-growing { text-align: center; }
+
+      /* Footer */
+      .contact-subtitle { text-align: center; }
+      .contact-service-area { text-align: center; }
+      .contact-copyright { text-align: center; }
+    }
+
+    @media (max-width: 480px) {
+      .wwa-hero { min-height: 0; padding: 64px 20px; }
+      .wwa-hero-content p { font-size: 20px; line-height: 1.65; }
+      .why-choose-heading { font-size: 26px; }
+      .philosophy-card { padding: 28px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ======================================================================
+       NAVIGATION
+       ====================================================================== -->
+  <header class="site-nav" id="site-nav">
+    <div class="nav-inner">
+
+      <div class="nav-left">
+        <a href="index.html" class="nav-logo" aria-label="Ever Allied Health — back to home">
+          <img src="assets/logo.svg" alt="Ever Allied Health" />
+        </a>
+        <nav aria-label="Main navigation">
+          <ul class="nav-links">
+            <li><a href="who-we-are.html" aria-current="page">Who We Are</a></li>
+            <li><a href="index.html#who-we-see">Who We See</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <a href="index.html#contact" class="nav-cta desktop-only">Make a referral</a>
+
+      <button class="nav-hamburger" id="nav-hamburger" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+    </div>
+
+    <nav class="nav-mobile-menu" id="nav-mobile-menu" aria-label="Mobile navigation">
+      <a href="who-we-are.html" aria-current="page">Who We Are</a>
+      <a href="index.html#who-we-see">Who We See</a>
+      <a href="index.html#contact">Contact</a>
+      <a href="index.html#contact" class="nav-cta">Make a referral</a>
+    </nav>
+  </header>
+
+
+  <main>
+
+    <!-- ====================================================================
+         HERO TEXT
+         ==================================================================== -->
+    <section class="wwa-hero" aria-label="About Ever Allied Health">
+      <div class="wwa-hero-bg" aria-hidden="true"></div>
+      <div class="wwa-hero-overlay" aria-hidden="true"></div>
+      <div class="wwa-hero-content">
+        <p>Ever Allied Health is a mobile physiotherapy practice serving older adults and people living with disability across Melbourne's northern and eastern suburbs. We visit clients at home, because that's where life actually happens, and that's where the best care can be delivered.</p>
+      </div>
+    </section>
+
+
+    <!-- ====================================================================
+         OUR PHILOSOPHY
+         ==================================================================== -->
+    <section class="wwa-philosophy" aria-label="Our philosophy">
+      <div class="container">
+
+        <h2 class="section-heading">Our Philosophy</h2>
+
+        <p class="wwa-philosophy-intro">Ever Allied Health was built on a simple belief: needing support doesn't change who you are. The person who built a career and raised a family is still that person, and they deserve care that reflects it. We are a mobile practice serving Melbourne's north and east. We come to you because care should fit your life—not the other way around. Whether the goal is moving more freely or reclaiming independence, our work is hands-on, practical, and focused on what matters to the individual.</p>
+
+        <div class="philosophy-cards">
+
+          <div class="philosophy-card">
+            <h3>The person doesn't change.</h3>
+            <p>Getting older, or needing support at home, doesn't change who someone is. The same person who built a career, raised a family and lived a full life is still that person. They deserve to be treated like it.</p>
+          </div>
+
+          <div class="philosophy-card">
+            <h3>Care that fits around a life.</h3>
+            <p>We come to our clients because that's where the best care happens. In their home, in their environment, with their furniture and their routines and their independence intact.</p>
+          </div>
+
+          <div class="philosophy-card">
+            <h3>Goals that actually matter.</h3>
+            <p>One of our clients wanted to get up and dance to Elvis. He got there. That's what this work is about — the goals that seem small on paper but mean everything to the person who achieves them.</p>
+          </div>
+
+          <div class="philosophy-card">
+            <h3>A standard, not a service.</h3>
+            <p>Dignity isn't something we offer as a feature. It's the baseline. Every visit, every plan, every interaction is built around the understanding that our clients are whole people who deserve real attention and high standards.</p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ====================================================================
+         WHY CHOOSE EVER ALLIED HEALTH
+         ==================================================================== -->
+    <section class="why-choose" aria-label="Why choose Ever Allied Health">
+
+      <h2 class="why-choose-heading">Why choose Ever Allied Health</h2>
+
+      <div class="why-choose-grid">
+
+        <!-- Block 1: Whole-person care -->
+        <div class="why-choose-block">
+          <div class="block-icon">
+            <!-- Love heart outline -->
+            <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M24 41C24 41 7 29.5 7 18C7 13.029 11.029 9 16 9C19.113 9 21.863 10.557 24 13C26.137 10.557 28.887 9 32 9C36.971 9 41 13.029 41 18C41 29.5 24 41 24 41Z" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h3>We treat the whole person, not the presenting problem.</h3>
+          <p>Ever Allied Health is designed to grow into a multidisciplinary team, which means your clients can access continuity of care as their needs change.</p>
+        </div>
+
+        <!-- Block 2: Long-term building -->
+        <div class="why-choose-block">
+          <div class="block-icon">
+            <!-- Seedling growing — long-term relationship and growth -->
+            <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M24 41V22" stroke="white" stroke-width="2" stroke-linecap="round"/>
+              <!-- Right leaf -->
+              <path d="M24 29.5c0-6 5.5-9 12-7.5-1.5 6-6 9.5-12 7.5z" fill="white"/>
+              <!-- Left leaf -->
+              <path d="M24 25c0-6-5.5-9-12-7.5C13.5 23.5 19 27 24 25z" fill="white"/>
+              <!-- Ground line -->
+              <path d="M15 41h18" stroke="white" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3>We're building for the long term.</h3>
+          <p>Ever Allied Health is designed to grow into a multidisciplinary team, which means your clients can access continuity of care as their needs change.</p>
+        </div>
+
+        <!-- Block 3: Credentials & compliance -->
+        <div class="why-choose-block">
+          <div class="block-icon">
+            <!-- Shield with checkmark — fully credentialled and compliant -->
+            <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M24 5l15 5.5v12c0 9.5-6.5 17-15 20C15 39.5 9 32 9 22.5V10.5L24 5z" stroke="white" stroke-width="2" stroke-linejoin="round"/>
+              <path d="M16 24.5l5.5 5.5 10.5-10.5" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h3>We're fully credentialled and compliant.</h3>
+          <p>Vanessa holds current AHPRA registration, NDIS Worker Screening clearance, a current police check and up-to-date vaccination status. All practitioners under the Ever Allied Health banner meet the same standard.</p>
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ====================================================================
+         MEET THE TEAM
+         ==================================================================== -->
+    <section class="meet-the-team" aria-label="Meet the team">
+      <div class="container">
+
+        <h2 class="section-heading">Meet the Team</h2>
+
+        <!-- Vanessa profile -->
+        <div class="team-profile">
+
+          <!-- Photo -->
+          <div class="team-photo-wrap">
+            <div class="img-placeholder">
+              Vanessa Tam — Principal Physiotherapist<br>Photo
+            </div>
+          </div>
+
+          <!-- Bio -->
+          <div class="team-bio">
+            <h3>Vanessa — Principal Physiotherapist</h3>
+            <p>Vanessa is a registered physiotherapist with extensive experience in aged care and disability. She founded Ever Allied Health to build something she believes in: a practice where every client is treated as a whole person, not a diagnosis or a funding category.</p>
+            <p>She specialises in functional rehabilitation, mobility, falls prevention and in-home therapy for older adults and people living with disability. Her approach is direct, thorough and grounded in what actually works for the individual in front of her.</p>
+            <p>Vanessa holds current AHPRA registration and meets all compliance requirements for working within NDIS and aged care settings, including a current police check, NDIS Worker Screening clearance, and up-to-date vaccination status. She holds professional indemnity and public liability insurance.</p>
+          </div>
+
+        </div>
+
+        <!-- Growing the team -->
+        <div class="team-growing">
+          <h3>Growing the team</h3>
+          <p>Ever Allied Health is building toward a multidisciplinary model. As we grow, we will bring on additional physiotherapists and allied health professionals who share our approach to dignified, person-centred care. All practitioners working under the Ever Allied Health banner are fully credentialled, AHPRA registered where applicable, police checked and NDIS compliant.</p>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- ======================================================================
+       CONTACT / FOOTER — Ready to refer a client?
+       ====================================================================== -->
+  <footer class="contact-footer" id="contact" aria-label="Contact and footer">
+    <div class="container">
+
+      <h2 class="section-heading">Ready to refer a client?</h2>
+      <p class="contact-subtitle">We'll get back to you within one business day.</p>
+
+      <!-- Contact Form -->
+      <form id="contact-form" class="contact-form">
+        <div class="form-group">
+          <label for="name">Referrer / Client Name *</label>
+          <input type="text" id="name" name="name" required aria-required="true">
+          <span class="form-error"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="contact">Phone or Email *</label>
+          <input type="text" id="contact" name="contact" required aria-required="true" placeholder="0412 345 678 or email@example.com">
+          <span class="form-error"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="suburb">Suburb (Melbourne) *</label>
+          <input type="text" id="suburb" name="suburb" required aria-required="true" placeholder="e.g., Rosanna, Heidelberg">
+          <span class="form-error"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="funding_type">Funding Type *</label>
+          <select id="funding_type" name="funding_type" required aria-required="true">
+            <option value="">— Select —</option>
+            <option value="Support at Home">Support at Home (SAH)</option>
+            <option value="NDIS">NDIS (plan-managed or self-managed)</option>
+            <option value="Private">Private</option>
+          </select>
+          <span class="form-error"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="notes">Notes (client details, goals, mobility context) *</label>
+          <textarea id="notes" name="notes" required aria-required="true" rows="5" placeholder="Tell us about your client..."></textarea>
+          <span class="form-error"></span>
+        </div>
+
+        <button type="submit" class="btn-gold">Send Enquiry</button>
+        <div id="form-error" class="form-error-message" style="display: none;">
+          Something went wrong — please email us directly at <a href="mailto:info@everalliedhealth.com.au">info@everalliedhealth.com.au</a>
+        </div>
+      </form>
+
+      <!-- Success Message (hidden by default) -->
+      <div id="form-success" class="form-success-message" style="display: none;">
+        <h3>Thank you.</h3>
+        <p>We'll be in touch within one business day.</p>
+      </div>
+
+      <p class="contact-service-area">Service area: Rosanna, Heidelberg, Reservoir, Thomastown, Fawkner, Preston, Kew, Bulleen, Brunswick, Eltham, Ivanhoe, Bundoora, Doncaster, Templestowe, Greensborough, Watsonia and Macleod, Melbourne.</p>
+
+      <div class="contact-footer-bar">
+        <p class="contact-copyright">© 2026 Ever Allied Health. Mobile physiotherapy across Melbourne's northern and eastern suburbs.</p>
+      </div>
+
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
