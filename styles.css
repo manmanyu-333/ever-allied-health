@@ -76,6 +76,21 @@ a {
   transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
 
+/* Cards and blocks get a more noticeable upward slide */
+.wws-card.reveal-hidden,
+.client-card.reveal-hidden,
+.philosophy-card.reveal-hidden,
+.why-choose-block.reveal-hidden,
+.feature-block.reveal-hidden {
+  transform: translateY(22px);
+  transition: opacity 0.55s ease-out, transform 0.55s ease-out;
+}
+
+.refer-step-item.reveal-hidden {
+  transform: translateY(18px);
+  transition: opacity 0.5s ease-out, transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
 .reveal-hidden.reveal-fade-only {
   transform: none;
   transition: opacity 0.8s ease-out;
@@ -387,7 +402,7 @@ a {
    Values Section
    -------------------------------------------------------------------------- */
 .values {
-  background: var(--color-cream);
+  background: #fcf3ea;
   padding: var(--section-pad-v) 60px;
   display: flex;
   flex-direction: column;
@@ -397,9 +412,10 @@ a {
 
 .values-grid {
   display: flex;
-  gap: 100px;
+  gap: 64px;
   justify-content: center;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
+  width: 100%;
 }
 
 .value-block {
@@ -407,6 +423,7 @@ a {
   flex-direction: column;
   align-items: center;
   gap: 27px;
+  flex: 1 1 0;
   max-width: 406px;
   text-align: center;
 }
@@ -737,7 +754,7 @@ a {
    Who We See
    -------------------------------------------------------------------------- */
 .who-we-see {
-  background: var(--color-cream-mid);
+  background: #fcf3ea;
   padding: 120px 24px;
 }
 
@@ -751,8 +768,11 @@ a {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 16px;
-  margin-bottom: 56px;
+  gap: 40px;
+  margin-bottom: 60px;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .who-we-see-intro {
@@ -765,10 +785,58 @@ a {
   max-width: 700px;
 }
 
+.who-we-see-buttons {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn-wws-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #3d4a1a;
+  color: #ffffff;
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1.56px;
+  height: 52px;
+  padding: 0 32px;
+  white-space: nowrap;
+  transition: background 0.15s;
+}
+
+.btn-wws-primary:hover { background: var(--color-olive); }
+
+.btn-wws-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #3d4a1a;
+  color: #3d4a1a;
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1.56px;
+  height: 52px;
+  padding: 0 32px;
+  white-space: nowrap;
+  transition: background 0.15s, color 0.15s;
+}
+
+.btn-wws-outline:hover {
+  background: #3d4a1a;
+  color: #ffffff;
+}
+
 .client-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 16px;
+  gap: 32px;
 }
 
 .client-card {
@@ -1044,6 +1112,9 @@ a {
   padding: 16px 24px;
   height: 51.5px;
   white-space: nowrap;
+  border: none;
+  outline: none;
+  cursor: pointer;
   transition: background 0.15s;
 }
 
@@ -1219,7 +1290,7 @@ a {
   .hero-content h1 { font-size: 56px; }
   .intro-text p { font-size: 38px; }
   .values-tagline { font-size: 38px; }
-  .values-grid { gap: 60px; }
+  .values-grid { gap: 40px; }
   .values { padding: 100px 40px; gap: 72px; }
   .stats { padding: 100px 40px; gap: 60px; }
 
@@ -1262,7 +1333,8 @@ a {
 
   /* Values */
   .values { padding: 72px 24px; gap: 56px; }
-  .values-grid { flex-direction: column; align-items: center; gap: 48px; }
+  .values-grid { flex-direction: column; align-items: center; flex-wrap: wrap; gap: 48px; }
+  .value-block { flex: none; max-width: 100%; }
   .values-tagline { font-size: 28px; }
   .value-block { max-width: 100%; }
 
@@ -1298,8 +1370,11 @@ a {
 
   /* Who We See */
   .who-we-see { padding: 72px 24px; }
-  .client-grid { grid-template-columns: 1fr; }
+  .who-we-see-header { gap: 32px; }
+  .client-grid { grid-template-columns: 1fr; gap: 16px; }
   .who-we-see-intro { font-size: 17px; }
+  .who-we-see-buttons { flex-direction: column; align-items: center; }
+  .btn-wws-primary, .btn-wws-outline { width: 100%; max-width: 280px; }
 
   /* Funding */
   .funding { padding: 72px 24px; }
@@ -1341,4 +1416,194 @@ a {
   .contact-form { margin-top: 32px; }
   .form-group input, .form-group select, .form-group textarea { font-size: 16px; padding: 10px 14px; }
   .form-success-message h3 { font-size: 28px; }
+}
+
+/* ==========================================================================
+   Interactions — hover states, transitions, micro-animations
+   All non-reveal motion lives here. Easing: cubic-bezier(0.4, 0, 0.2, 1)
+   matches the smooth standard used by the reference design.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   Cards — lift + shadow on hover
+   The higher-specificity .reveal-hidden compound selectors above still win
+   during the reveal animation; these transitions take over once revealed.
+   -------------------------------------------------------------------------- */
+.client-card,
+.wws-card,
+.philosophy-card {
+  transition: opacity 0.5s ease-out,
+              transform 380ms cubic-bezier(0.4, 0, 0.2, 1),
+              box-shadow 380ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.client-card:hover,
+.wws-card:hover,
+.philosophy-card:hover {
+  transform: translateY(-7px);
+  box-shadow: 0 20px 40px -10px rgba(69, 68, 17, 0.13);
+}
+
+/* Feature blocks — slightly smaller lift */
+.feature-block {
+  transition: opacity 0.5s ease-out,
+              transform 320ms cubic-bezier(0.4, 0, 0.2, 1),
+              box-shadow 320ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.feature-block:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 28px -8px rgba(69, 68, 17, 0.10);
+}
+
+/* Value blocks */
+.value-block {
+  transition: transform 300ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.value-block:hover { transform: translateY(-5px); }
+
+/* Stat blocks */
+.stat-block {
+  transition: transform 300ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.stat-block:hover { transform: translateY(-4px); }
+
+/* --------------------------------------------------------------------------
+   Why Choose blocks (dark bg) — lift + icon scale
+   -------------------------------------------------------------------------- */
+.why-choose-block {
+  transition: opacity 0.5s ease-out,
+              transform 350ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.why-choose-block:hover { transform: translateY(-7px); }
+
+.why-choose-block .block-icon {
+  transition: transform 350ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.why-choose-block:hover .block-icon { transform: scale(1.14); }
+
+/* --------------------------------------------------------------------------
+   Refer steps — slide right + step number brightens
+   -------------------------------------------------------------------------- */
+.refer-step-item {
+  transition: opacity 0.5s ease-out,
+              transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.refer-step-item:hover { transform: translateX(7px); }
+
+.refer-step-num {
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.refer-step-item:hover .refer-step-num { color: #c9a533; }
+
+/* --------------------------------------------------------------------------
+   Funding list items — slide right on hover
+   -------------------------------------------------------------------------- */
+.wws-funding-list li {
+  transition: transform 200ms cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: default;
+}
+.wws-funding-list li:hover { transform: translateX(5px); }
+
+/* --------------------------------------------------------------------------
+   Suburb pills — lift + subtle shadow + background tint
+   -------------------------------------------------------------------------- */
+.suburb-pill {
+  transition: transform 200ms cubic-bezier(0.4, 0, 0.2, 1),
+              box-shadow 200ms cubic-bezier(0.4, 0, 0.2, 1),
+              background 200ms cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: default;
+}
+.suburb-pill:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px -4px rgba(69, 68, 17, 0.13);
+  background: rgba(69, 68, 17, 0.03);
+}
+
+/* --------------------------------------------------------------------------
+   Buttons — lift + shadow (overrides the basic 0.15s background-only
+   transitions defined earlier in the file)
+   -------------------------------------------------------------------------- */
+.btn-primary {
+  transition: background 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+              transform  0.3s cubic-bezier(0.4, 0, 0.2, 1),
+              box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.btn-primary:hover {
+  background: #e8ddd0;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px -4px rgba(69, 68, 17, 0.20);
+}
+
+.btn-outline-white {
+  transition: background 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+              color      0.3s cubic-bezier(0.4, 0, 0.2, 1),
+              transform  0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.btn-outline-white:hover {
+  background: rgba(252, 243, 234, 0.1);
+  transform: translateY(-2px);
+}
+
+.btn-gold {
+  transition: background 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+              transform  0.3s cubic-bezier(0.4, 0, 0.2, 1),
+              box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.btn-gold:hover {
+  background: #c9a533;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px -4px rgba(184, 150, 46, 0.30);
+}
+
+.btn-wws-primary {
+  transition: background 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+              color      0.3s cubic-bezier(0.4, 0, 0.2, 1),
+              transform  0.3s cubic-bezier(0.4, 0, 0.2, 1),
+              box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.btn-wws-primary:hover {
+  background: var(--color-olive);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px -4px rgba(69, 68, 17, 0.25);
+}
+
+.btn-wws-outline {
+  transition: background 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+              color      0.3s cubic-bezier(0.4, 0, 0.2, 1),
+              transform  0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.btn-wws-outline:hover { transform: translateY(-2px); }
+
+/* --------------------------------------------------------------------------
+   Nav CTA — lift + shadow
+   -------------------------------------------------------------------------- */
+.nav-cta {
+  transition: background 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+              transform  0.25s cubic-bezier(0.4, 0, 0.2, 1),
+              box-shadow 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.nav-cta:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(69, 68, 17, 0.18);
+}
+
+/* --------------------------------------------------------------------------
+   Reduced motion — keep colour/shadow changes, remove transforms
+   -------------------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  .client-card, .wws-card, .philosophy-card,
+  .feature-block, .value-block, .stat-block,
+  .why-choose-block, .refer-step-item,
+  .suburb-pill, .btn-primary, .btn-outline-white,
+  .btn-gold, .btn-wws-primary, .btn-wws-outline, .nav-cta {
+    transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+  }
+  .client-card:hover, .wws-card:hover, .philosophy-card:hover,
+  .feature-block:hover, .value-block:hover, .stat-block:hover,
+  .why-choose-block:hover, .refer-step-item:hover, .suburb-pill:hover,
+  .btn-primary:hover, .btn-outline-white:hover, .btn-gold:hover,
+  .btn-wws-primary:hover, .btn-wws-outline:hover, .nav-cta:hover {
+    transform: none;
+  }
 }

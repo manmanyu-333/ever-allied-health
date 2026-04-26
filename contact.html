@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="Vanessa Tam, Ever Allied Health">
+
+  <title>Make a Referral | Ever Allied Health</title>
+  <meta name="description" content="Refer a client to Ever Allied Health. Mobile physiotherapy across Melbourne's northern and eastern suburbs. NDIS, aged care, private. We respond within one business day." />
+
+  <link rel="canonical" href="https://everalliedhealth.com.au/contact">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link rel="stylesheet" href="styles.css" />
+
+  <style>
+    /* ===================================================================
+       Contact / Referral — page-specific styles
+       =================================================================== */
+
+    .contact-refer {
+      background: var(--color-white);
+      padding: 80px 24px;
+    }
+
+    .contact-refer .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 40px;
+    }
+
+    /* Steps list */
+    .refer-steps-list {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      max-width: 720px;
+    }
+
+    .refer-step-item {
+      display: grid;
+      grid-template-columns: 80px 1fr;
+      gap: 24px;
+      padding: 24px 0;
+      border-bottom: 1px solid rgba(69, 68, 17, 0.10);
+    }
+
+    .refer-step-item:first-child {
+      border-top: 1px solid rgba(69, 68, 17, 0.10);
+    }
+
+    .refer-step-num {
+      font-family: var(--font-serif);
+      font-size: 48px;
+      font-weight: 400;
+      line-height: 1;
+      color: var(--color-gold);
+      padding-top: 3px;
+    }
+
+    .refer-step-content {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .refer-step-content h3 {
+      font-family: var(--font-sans);
+      font-size: 17px;
+      font-weight: 500;
+      line-height: 1.4;
+      color: var(--color-olive);
+    }
+
+    .refer-step-content p {
+      font-family: var(--font-sans);
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 1.7;
+      color: var(--color-olive-mid);
+    }
+
+    /* Closing italic line */
+    .refer-closing {
+      font-family: var(--font-serif);
+      font-size: 20px;
+      font-style: italic;
+      font-weight: 400;
+      line-height: 1.6;
+      color: var(--color-olive-mid);
+      text-align: center;
+    }
+
+    /* Responsive — tablet */
+    @media (max-width: 1024px) {
+      .contact-refer { padding: 64px 32px; }
+    }
+
+    /* Responsive — mobile */
+    @media (max-width: 768px) {
+      .contact-refer { padding: 56px 24px; }
+      .refer-steps-list { max-width: 100%; }
+      .refer-step-item { grid-template-columns: 56px 1fr; gap: 16px; padding: 32px 0; }
+      .refer-step-num { font-size: 36px; }
+      .refer-closing { font-size: 18px; }
+
+      /* Footer */
+      .contact-subtitle { text-align: center; }
+      .contact-service-area { text-align: center; }
+      .contact-copyright { text-align: center; }
+    }
+
+    @media (max-width: 480px) {
+      .refer-step-item { grid-template-columns: 48px 1fr; }
+      .refer-step-num { font-size: 30px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ======================================================================
+       NAVIGATION
+       ====================================================================== -->
+  <header class="site-nav" id="site-nav">
+    <div class="nav-inner">
+
+      <div class="nav-left">
+        <a href="index.html" class="nav-logo" aria-label="Ever Allied Health — back to home">
+          <img src="assets/logo.svg" alt="Ever Allied Health" />
+        </a>
+        <nav aria-label="Main navigation">
+          <ul class="nav-links">
+            <li><a href="who-we-are.html">Who We Are</a></li>
+            <li><a href="who-we-see.html">Who We See</a></li>
+            <li><a href="contact.html" aria-current="page">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <a href="#contact" class="nav-cta desktop-only">Make a referral</a>
+
+      <button class="nav-hamburger" id="nav-hamburger" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+    </div>
+
+    <nav class="nav-mobile-menu" id="nav-mobile-menu" aria-label="Mobile navigation">
+      <a href="who-we-are.html">Who We Are</a>
+      <a href="who-we-see.html">Who We See</a>
+      <a href="contact.html" aria-current="page">Contact</a>
+      <a href="#contact" class="nav-cta">Make a referral</a>
+    </nav>
+  </header>
+
+
+  <main>
+
+    <!-- ======================================================================
+         HOW TO REFER A CLIENT
+         ====================================================================== -->
+    <section class="contact-refer" aria-label="How to refer a client">
+      <div class="container">
+
+        <h1 class="section-heading">How to Refer a Client</h1>
+
+        <div class="refer-steps-list">
+
+          <div class="refer-step-item">
+            <div class="refer-step-num">01</div>
+            <div class="refer-step-content">
+              <h3>Get in touch</h3>
+              <p>Call, email or complete the referral form. You don't need a formal referral document to start the conversation.</p>
+            </div>
+          </div>
+
+          <div class="refer-step-item">
+            <div class="refer-step-num">02</div>
+            <div class="refer-step-content">
+              <h3>Tell us about your client</h3>
+              <p>We'll ask about funding type, goals, mobility context, and any access considerations for a home visit.</p>
+            </div>
+          </div>
+
+          <div class="refer-step-item">
+            <div class="refer-step-num">03</div>
+            <div class="refer-step-content">
+              <h3>We confirm availability</h3>
+              <p>We'll confirm whether we can take the referral and provide an estimated start date, usually within a few business days.</p>
+            </div>
+          </div>
+
+          <div class="refer-step-item">
+            <div class="refer-step-num">04</div>
+            <div class="refer-step-content">
+              <h3>Initial assessment</h3>
+              <p>Our physiotherapist visits the client at home for a thorough initial assessment in their real environment.</p>
+            </div>
+          </div>
+
+          <div class="refer-step-item">
+            <div class="refer-step-num">05</div>
+            <div class="refer-step-content">
+              <h3>Goal-based treatment plan</h3>
+              <p>We develop a personalised plan in collaboration with the client, their family and you as the referrer. You'll be kept in the loop.</p>
+            </div>
+          </div>
+
+        </div>
+
+        <p class="refer-closing">We aim to respond to all referral enquiries within one business day.</p>
+
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- ========================================================================
+       CONTACT / FOOTER — Ready to refer a client?
+       ======================================================================== -->
+  <footer class="contact-footer" id="contact" aria-label="Contact and footer">
+    <div class="container">
+
+      <h2 class="section-heading">Ready to refer a client?</h2>
+      <p class="contact-subtitle">We'll get back to you within one business day.</p>
+
+      <!-- Contact Form -->
+      <form id="contact-form" class="contact-form">
+        <div class="form-group">
+          <label for="name">Referrer / Client Name *</label>
+          <input type="text" id="name" name="name" required aria-required="true">
+          <span class="form-error"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="contact">Phone or Email *</label>
+          <input type="text" id="contact" name="contact" required aria-required="true" placeholder="0412 345 678 or email@example.com">
+          <span class="form-error"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="suburb">Suburb (Melbourne) *</label>
+          <input type="text" id="suburb" name="suburb" required aria-required="true" placeholder="e.g., Rosanna, Heidelberg">
+          <span class="form-error"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="funding_type">Funding Type *</label>
+          <select id="funding_type" name="funding_type" required aria-required="true">
+            <option value="">— Select —</option>
+            <option value="Support at Home">Support at Home (SAH)</option>
+            <option value="NDIS">NDIS (plan-managed or self-managed)</option>
+            <option value="Private">Private</option>
+          </select>
+          <span class="form-error"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="notes">Notes (client details, goals, mobility context) *</label>
+          <textarea id="notes" name="notes" required aria-required="true" rows="5" placeholder="Tell us about your client..."></textarea>
+          <span class="form-error"></span>
+        </div>
+
+        <button type="submit" class="btn-gold">Send Enquiry</button>
+        <div id="form-error" class="form-error-message" style="display: none;">
+          Something went wrong — please email us directly at <a href="mailto:info@everalliedhealth.com.au">info@everalliedhealth.com.au</a>
+        </div>
+      </form>
+
+      <!-- Success Message (hidden by default) -->
+      <div id="form-success" class="form-success-message" style="display: none;">
+        <h3>Thank you.</h3>
+        <p>We'll be in touch within one business day.</p>
+      </div>
+
+      <p class="contact-service-area">Service area: Rosanna, Heidelberg, Reservoir, Thomastown, Fawkner, Preston, Kew, Bulleen, Brunswick, Eltham, Ivanhoe, Bundoora, Doncaster, Templestowe, Greensborough, Watsonia and Macleod, Melbourne.</p>
+
+      <div class="contact-footer-bar">
+        <p class="contact-copyright">© 2026 Ever Allied Health. Mobile physiotherapy across Melbourne's northern and eastern suburbs.</p>
+      </div>
+
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

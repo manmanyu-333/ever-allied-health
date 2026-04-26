@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="Vanessa Tam, Ever Allied Health">
+
+  <title>Who We See | Ever Allied Health</title>
+  <meta name="description" content="Ever Allied Health provides mobile physiotherapy for older adults, people living with disability, post-hospital clients and private clients across Melbourne's north and east." />
+
+  <link rel="canonical" href="https://everalliedhealth.com.au/who-we-see">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link rel="stylesheet" href="styles.css" />
+
+  <style>
+    /* ===================================================================
+       Who We See — page-specific styles
+       =================================================================== */
+
+    /* ------------------------------------------------------------------
+       Page intro / hero strip
+       ------------------------------------------------------------------ */
+    .wws-page-intro {
+      background: #fffaf6;
+      padding: 120px 24px 80px;
+      text-align: center;
+    }
+
+    .wws-page-intro .section-heading {
+      margin-bottom: 24px;
+    }
+
+    .wws-page-intro-text {
+      font-family: var(--font-sans);
+      font-size: 18px;
+      font-weight: 400;
+      line-height: 1.75;
+      color: var(--color-olive-mid);
+      max-width: 680px;
+      margin: 0 auto;
+    }
+
+    /* ------------------------------------------------------------------
+       Client cards grid
+       ------------------------------------------------------------------ */
+    .wws-cards {
+      background: #fffaf6;
+      padding: 0 24px 120px;
+    }
+
+    .wws-card-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      max-width: var(--content-max);
+      margin: 0 auto;
+    }
+
+    .wws-card {
+      background: var(--color-white);
+      padding: 48px 44px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .wws-card h3 {
+      font-family: var(--font-serif);
+      font-size: 26px;
+      font-weight: 400;
+      line-height: 1.3;
+      color: var(--color-olive);
+    }
+
+    .wws-card p {
+      font-family: var(--font-sans);
+      font-size: 17px;
+      font-weight: 400;
+      line-height: 1.75;
+      color: var(--color-olive-mid);
+    }
+
+    /* ------------------------------------------------------------------
+       Funding & Access
+       ------------------------------------------------------------------ */
+    .wws-funding {
+      background: var(--color-white);
+      padding: var(--section-pad-v) 24px;
+    }
+
+    .wws-funding .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 48px;
+    }
+
+    .wws-funding-subtitle {
+      font-family: var(--font-sans);
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 1.6;
+      color: var(--color-olive-mid);
+      text-align: center;
+    }
+
+    .wws-funding-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 22px;
+      width: 100%;
+      max-width: 540px;
+    }
+
+    .wws-funding-list li {
+      display: flex;
+      gap: 20px;
+      font-family: var(--font-sans);
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 1.65;
+      color: var(--color-olive-mid);
+    }
+
+    .wws-funding-list li::before {
+      content: '—';
+      color: var(--color-gold);
+      flex-shrink: 0;
+    }
+
+    .wws-funding-image {
+      width: 100%;
+      max-width: 612px;
+      aspect-ratio: 16 / 9;
+      background: #ddd8cf;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-sans);
+      font-size: 13px;
+      color: #999;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .wws-funding-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* ------------------------------------------------------------------
+       Service Area
+       ------------------------------------------------------------------ */
+    .wws-service-area {
+      background: #fffaf6;
+      padding: var(--section-pad-v) 24px;
+    }
+
+    .wws-service-area .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 56px;
+    }
+
+    .wws-service-area .section-heading {
+      text-align: center;
+      margin-bottom: 0;
+    }
+
+    .wws-service-subtitle {
+      font-family: var(--font-sans);
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 1.6;
+      color: var(--color-olive-mid);
+      text-align: center;
+      margin-top: -40px;
+    }
+
+    .wws-suburb-groups {
+      display: flex;
+      flex-direction: column;
+      gap: 48px;
+      width: 100%;
+    }
+
+    .suburb-group {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .suburb-group-label {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-family: var(--font-serif);
+      font-size: 22px;
+      font-weight: 400;
+      color: var(--color-olive);
+    }
+
+    .suburb-group-label svg {
+      flex-shrink: 0;
+    }
+
+    .suburb-pills {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      width: 100%;
+    }
+
+    .suburb-pill {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+      padding: 16px 20px;
+      border-radius: 16px;
+      border: 1.5px solid #3d4a1a;
+      background: var(--color-white);
+    }
+
+    .suburb-pill-name {
+      font-family: var(--font-serif);
+      font-size: 17px;
+      font-weight: 400;
+      line-height: 1.2;
+      color: var(--color-olive);
+    }
+
+    .suburb-pill-postcode {
+      font-family: var(--font-sans);
+      font-size: 13px;
+      font-weight: 400;
+      color: var(--color-olive-mid);
+      opacity: 0.65;
+    }
+
+    .wws-service-callout {
+      background: #c5cdb8;
+      padding: 28px 32px;
+      font-family: var(--font-sans);
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 1.65;
+      color: var(--color-olive);
+      width: 100%;
+    }
+
+    .wws-service-callout strong {
+      font-weight: 600;
+    }
+
+    /* ------------------------------------------------------------------
+       How to Refer
+       ------------------------------------------------------------------ */
+    .wws-refer {
+      background: var(--color-white);
+      padding: var(--section-pad-v) 24px;
+    }
+
+    .wws-refer .container {
+      display: flex;
+      flex-direction: column;
+      gap: 64px;
+    }
+
+    .wws-refer-steps {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .wws-refer-step {
+      display: grid;
+      grid-template-columns: 100px 1fr;
+      gap: 24px;
+      padding: 40px 0;
+      border-bottom: 1px solid rgba(69, 68, 17, 0.12);
+    }
+
+    .wws-refer-step:first-child {
+      border-top: 1px solid rgba(69, 68, 17, 0.12);
+    }
+
+    .wws-step-number {
+      font-family: var(--font-serif);
+      font-size: 48px;
+      font-weight: 400;
+      line-height: 1;
+      color: var(--color-gold);
+      padding-top: 4px;
+    }
+
+    .wws-step-body {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .wws-step-body h3 {
+      font-family: var(--font-serif);
+      font-size: 24px;
+      font-weight: 400;
+      line-height: 1.35;
+      color: var(--color-olive);
+    }
+
+    .wws-step-body p {
+      font-family: var(--font-sans);
+      font-size: 17px;
+      font-weight: 400;
+      line-height: 1.7;
+      color: var(--color-olive-mid);
+    }
+
+    .wws-refer-closing {
+      font-family: var(--font-serif);
+      font-size: 20px;
+      font-style: italic;
+      font-weight: 400;
+      line-height: 1.6;
+      color: var(--color-olive-mid);
+      text-align: center;
+      max-width: 680px;
+      margin: 0 auto;
+    }
+
+    /* ------------------------------------------------------------------
+       Responsive — tablet (≤1024px)
+       ------------------------------------------------------------------ */
+    @media (max-width: 1024px) {
+      .wws-page-intro { padding: 100px 32px 64px; }
+      .wws-cards { padding: 0 32px 100px; }
+      .wws-funding .container { gap: 40px; }
+      .wws-suburb-groups { gap: 48px; }
+      .wws-refer-step { grid-template-columns: 80px 1fr; }
+      .wws-step-number { font-size: 40px; }
+    }
+
+    /* ------------------------------------------------------------------
+       Responsive — mobile (≤768px)
+       ------------------------------------------------------------------ */
+    @media (max-width: 768px) {
+      .wws-page-intro { padding: 72px 24px 48px; }
+      .wws-page-intro-text { font-size: 16px; }
+
+      .wws-cards { padding: 0 24px 80px; }
+      .wws-card-grid { grid-template-columns: 1fr; }
+      .wws-card { padding: 32px 28px; }
+
+      .wws-funding { padding: 72px 24px; }
+      .wws-funding-list { max-width: 100%; }
+      .wws-funding-image { max-width: 100%; }
+
+      .wws-service-area { padding: 72px 24px; }
+      .suburb-pills { grid-template-columns: repeat(2, 1fr); }
+
+      .wws-refer { padding: 72px 24px; }
+      .wws-refer-step { grid-template-columns: 1fr; gap: 8px; }
+      .wws-step-number { font-size: 32px; }
+      .wws-step-body h3 { font-size: 20px; }
+
+      /* Footer */
+      .contact-subtitle { text-align: center; }
+      .contact-service-area { text-align: center; }
+      .contact-copyright { text-align: center; }
+    }
+
+    @media (max-width: 480px) {
+      .wws-card { padding: 28px 20px; }
+      .wws-refer-closing { font-size: 18px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ======================================================================
+       NAVIGATION
+       ====================================================================== -->
+  <header class="site-nav" id="site-nav">
+    <div class="nav-inner">
+
+      <div class="nav-left">
+        <a href="index.html" class="nav-logo" aria-label="Ever Allied Health — back to home">
+          <img src="assets/logo.svg" alt="Ever Allied Health" />
+        </a>
+        <nav aria-label="Main navigation">
+          <ul class="nav-links">
+            <li><a href="who-we-are.html">Who We Are</a></li>
+            <li><a href="who-we-see.html" aria-current="page">Who We See</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <a href="contact.html" class="nav-cta desktop-only">Make a referral</a>
+
+      <button class="nav-hamburger" id="nav-hamburger" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+    </div>
+
+    <nav class="nav-mobile-menu" id="nav-mobile-menu" aria-label="Mobile navigation">
+      <a href="who-we-are.html">Who We Are</a>
+      <a href="who-we-see.html" aria-current="page">Who We See</a>
+      <a href="contact.html">Contact</a>
+      <a href="contact.html" class="nav-cta">Make a referral</a>
+    </nav>
+  </header>
+
+
+  <main>
+
+    <!-- ======================================================================
+         WHO WE SEE — page intro
+         ====================================================================== -->
+    <section class="wws-page-intro" aria-label="Who we see">
+      <h1 class="section-heading">Who We See</h1>
+      <p class="wws-page-intro-text">We work with older adults and people living with disability who want to stay in their own homes, on their own terms. Our clients come to us through a range of funding streams, and we work closely with case managers, support coordinators and care teams to make the referral process as straightforward as possible.</p>
+    </section>
+
+
+    <!-- ======================================================================
+         CLIENT CARDS
+         ====================================================================== -->
+    <section class="wws-cards" aria-label="Client types">
+      <div class="wws-card-grid">
+
+        <div class="wws-card">
+          <h3>Older Adults</h3>
+          <p>Clients receiving support at home who want to maintain mobility, independence and quality of life. We support people living with arthritis, Parkinson's, osteoporosis, post-surgical recovery, chronic pain and falls risk.</p>
+        </div>
+
+        <div class="wws-card">
+          <h3>People Living with Disability</h3>
+          <p>NDIS participants seeking physiotherapy to support daily function, mobility goals and independence. We work with self-managed, plan-managed and NDIA-managed participants.</p>
+        </div>
+
+        <div class="wws-card">
+          <h3>Post-Hospital &amp; Rehabilitation</h3>
+          <p>Clients transitioning home after hospitalisation, surgery or an acute health event. We work with discharge planners and care teams to ensure a safe and supported return home.</p>
+        </div>
+
+        <div class="wws-card">
+          <h3>Private Clients</h3>
+          <p>Self-funded clients who prefer mobile physiotherapy in the comfort of their own home, without a funding package or referral required.</p>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ======================================================================
+         FUNDING & ACCESS
+         ====================================================================== -->
+    <section class="wws-funding" id="funding" aria-label="Funding and access">
+      <div class="container">
+
+        <h2 class="section-heading">Funding and Access</h2>
+
+        <p class="wws-funding-subtitle">We accept clients through the following funding streams:</p>
+
+        <ul class="wws-funding-list">
+          <li>NDIS (self-managed, plan-managed and NDIA-managed)</li>
+          <li>My Aged Care Home Care Packages (HCP)</li>
+          <li>Support at Home (Commonwealth Home Support Programme)</li>
+          <li>Chronic Disease Management / GP Management Plans (gap may apply)</li>
+          <li>Private (fee for service)</li>
+        </ul>
+
+        <div class="wws-funding-image" aria-hidden="true">
+          Photo placeholder
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ======================================================================
+         SERVICE AREA
+         ====================================================================== -->
+    <section class="wws-service-area" id="service-area" aria-label="Service area">
+      <div class="container">
+
+        <h2 class="section-heading">Service Area</h2>
+
+        <p class="wws-service-subtitle">We are based in Rosanna and service clients across Melbourne's northern and eastern suburbs.</p>
+
+        <div class="wws-suburb-groups">
+
+          <!-- Northern Suburbs -->
+          <div class="suburb-group">
+            <div class="suburb-group-label">
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path d="M9 1.5C6.515 1.5 4.5 3.515 4.5 6c0 3.938 4.5 10.5 4.5 10.5s4.5-6.563 4.5-10.5C13.5 3.515 11.485 1.5 9 1.5zm0 6.188a1.688 1.688 0 1 1 0-3.376 1.688 1.688 0 0 1 0 3.375z" fill="#b8962e"/>
+              </svg>
+              Northern Suburbs
+            </div>
+            <div class="suburb-pills">
+              <div class="suburb-pill"><span class="suburb-pill-name">Fawkner</span><span class="suburb-pill-postcode">3060</span></div>
+              <div class="suburb-pill"><span class="suburb-pill-name">Thomastown</span><span class="suburb-pill-postcode">3074</span></div>
+              <div class="suburb-pill"><span class="suburb-pill-name">Reservoir</span><span class="suburb-pill-postcode">3073</span></div>
+              <div class="suburb-pill"><span class="suburb-pill-name">Brunswick</span><span class="suburb-pill-postcode">3056</span></div>
+              <div class="suburb-pill"><span class="suburb-pill-name">Preston</span><span class="suburb-pill-postcode">3072</span></div>
+              <div class="suburb-pill"><span class="suburb-pill-name">Bundoora</span><span class="suburb-pill-postcode">3083</span></div>
+              <div class="suburb-pill"><span class="suburb-pill-name">Greensborough</span><span class="suburb-pill-postcode">3088</span></div>
+              <div class="suburb-pill"><span class="suburb-pill-name">Watsonia</span><span class="suburb-pill-postcode">3087</span></div>
+              <div class="suburb-pill"><span class="suburb-pill-name">Macleod</span><span class="suburb-pill-postcode">3085</span></div>
+            </div>
+          </div>
+
+          <!-- Eastern Suburbs -->
+          <div class="suburb-group">
+            <div class="suburb-group-label">
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path d="M9 1.5C6.515 1.5 4.5 3.515 4.5 6c0 3.938 4.5 10.5 4.5 10.5s4.5-6.563 4.5-10.5C13.5 3.515 11.485 1.5 9 1.5zm0 6.188a1.688 1.688 0 1 1 0-3.376 1.688 1.688 0 0 1 0 3.375z" fill="#b8962e"/>
+              </svg>
+              Eastern Suburbs
+            </div>
+            <div class="suburb-pills">
+              <div class="suburb-pill"><span class="suburb-pill-name">Rosanna</span><span class="suburb-pill-postcode">3084</span></div>
+              <div class="suburb-pill"><span class="suburb-pill-name">Heidelberg</span><span class="suburb-pill-postcode">3084</span></div>
+              <div class="suburb-pill"><span class="suburb-pill-name">Kew</span><span class="suburb-pill-postcode">3101</span></div>
+              <div class="suburb-pill"><span class="suburb-pill-name">Bulleen</span><span class="suburb-pill-postcode">3105</span></div>
+              <div class="suburb-pill"><span class="suburb-pill-name">Eltham</span><span class="suburb-pill-postcode">3095</span></div>
+              <div class="suburb-pill"><span class="suburb-pill-name">Ivanhoe</span><span class="suburb-pill-postcode">3079</span></div>
+              <div class="suburb-pill"><span class="suburb-pill-name">Doncaster</span><span class="suburb-pill-postcode">3108</span></div>
+              <div class="suburb-pill"><span class="suburb-pill-name">Templestowe</span><span class="suburb-pill-postcode">3106</span></div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="wws-service-callout">
+          <strong>Don't see your suburb listed?</strong> We also service surrounding areas in Melbourne's north and east. Contact us to confirm we can reach you.
+        </div>
+
+      </div>
+    </section>
+
+
+  </main>
+
+
+  <!-- ========================================================================
+       CONTACT / FOOTER — Ready to refer a client?
+       ======================================================================== -->
+  <footer class="contact-footer" id="contact" aria-label="Contact and footer">
+    <div class="container">
+
+      <h2 class="section-heading">Ready to refer a client?</h2>
+      <p class="contact-subtitle">We'll get back to you within one business day.</p>
+
+      <!-- Contact Form -->
+      <form id="contact-form" class="contact-form">
+        <div class="form-group">
+          <label for="name">Referrer / Client Name *</label>
+          <input type="text" id="name" name="name" required aria-required="true">
+          <span class="form-error"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="contact">Phone or Email *</label>
+          <input type="text" id="contact" name="contact" required aria-required="true" placeholder="0412 345 678 or email@example.com">
+          <span class="form-error"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="suburb">Suburb (Melbourne) *</label>
+          <input type="text" id="suburb" name="suburb" required aria-required="true" placeholder="e.g., Rosanna, Heidelberg">
+          <span class="form-error"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="funding_type">Funding Type *</label>
+          <select id="funding_type" name="funding_type" required aria-required="true">
+            <option value="">— Select —</option>
+            <option value="Support at Home">Support at Home (SAH)</option>
+            <option value="NDIS">NDIS (plan-managed or self-managed)</option>
+            <option value="Private">Private</option>
+          </select>
+          <span class="form-error"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="notes">Notes (client details, goals, mobility context) *</label>
+          <textarea id="notes" name="notes" required aria-required="true" rows="5" placeholder="Tell us about your client..."></textarea>
+          <span class="form-error"></span>
+        </div>
+
+        <button type="submit" class="btn-gold">Send Enquiry</button>
+        <div id="form-error" class="form-error-message" style="display: none;">
+          Something went wrong — please email us directly at <a href="mailto:info@everalliedhealth.com.au">info@everalliedhealth.com.au</a>
+        </div>
+      </form>
+
+      <!-- Success Message (hidden by default) -->
+      <div id="form-success" class="form-success-message" style="display: none;">
+        <h3>Thank you.</h3>
+        <p>We'll be in touch within one business day.</p>
+      </div>
+
+      <p class="contact-service-area">Service area: Rosanna, Heidelberg, Reservoir, Thomastown, Fawkner, Preston, Kew, Bulleen, Brunswick, Eltham, Ivanhoe, Bundoora, Doncaster, Templestowe, Greensborough, Watsonia and Macleod, Melbourne.</p>
+
+      <div class="contact-footer-bar">
+        <p class="contact-copyright">© 2026 Ever Allied Health. Mobile physiotherapy across Melbourne's northern and eastern suburbs.</p>
+      </div>
+
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

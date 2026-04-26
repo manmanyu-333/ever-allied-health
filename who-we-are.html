@@ -48,16 +48,42 @@
     .wwa-hero-content {
       position: relative;
       z-index: 2;
-      max-width: 1100px;
+      width: 900px;
+      max-width: calc(100% - 48px);
       text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 52px;
     }
 
     .wwa-hero-content p {
       font-family: var(--font-serif);
-      font-size: 40px;
+      font-size: 32px;
       font-weight: 400;
       line-height: 1.98;
       color: var(--color-olive);
+    }
+
+    /* Scroll arrow */
+    .wwa-scroll-arrow {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      opacity: 0.45;
+      animation: wwa-scroll-bounce 2.2s ease-in-out infinite;
+    }
+
+    .wwa-scroll-arrow svg {
+      width: 28px;
+      height: 28px;
+      color: var(--color-olive);
+    }
+
+    @keyframes wwa-scroll-bounce {
+      0%, 100% { transform: translateY(0);   opacity: 0.45; }
+      50%       { transform: translateY(9px); opacity: 0.75; }
     }
 
     /* Philosophy section */
@@ -135,9 +161,10 @@
 
     .why-choose-grid {
       display: flex;
-      gap: 100px;
+      gap: 64px;
       justify-content: center;
-      flex-wrap: wrap;
+      flex-wrap: nowrap;
+      width: 100%;
     }
 
     .why-choose-block {
@@ -145,6 +172,7 @@
       flex-direction: column;
       align-items: center;
       gap: 27px;
+      flex: 1 1 0;
       max-width: 406px;
       text-align: center;
     }
@@ -174,18 +202,28 @@
     /* Responsive — tablet */
     @media (max-width: 1024px) {
       .wwa-hero { padding: 80px 32px; }
-      .wwa-hero-content p { font-size: 32px; line-height: 1.75; }
+      .wwa-hero-content { gap: 40px; }
+      .wwa-hero-content p { font-size: 28px; line-height: 1.75; }
       .why-choose { padding: 100px 40px; gap: 72px; }
-      .why-choose-grid { gap: 60px; }
+      .why-choose-grid { gap: 40px; }
       .wwa-philosophy { padding: 100px 24px; }
     }
 
     /* Responsive — mobile */
     @media (max-width: 768px) {
-      /* Remove viewport min-height on mobile — browser chrome makes 100vh
-         unreliable, causing the section to be taller than visible and the
-         text to appear off-center. Even padding creates true symmetry. */
-      .wwa-hero { min-height: 0; padding: 80px 24px; }
+      /* 100dvh = dynamic viewport height (excludes browser chrome/address bar).
+         This fills the visible screen correctly on mobile Safari/Chrome where
+         100vh is larger than the visible area, causing off-centre text. */
+      .wwa-hero {
+        min-height: calc(100vh - var(--nav-height));   /* fallback */
+        min-height: calc(100dvh - var(--nav-height));  /* modern */
+        padding: 80px 24px;
+      }
+      /* Shift focal point right so the therapist/patient are centred on narrow screens */
+      .wwa-hero-bg { background-position: 68% center; }
+      /* Arrow not needed on mobile — user will naturally scroll */
+      .wwa-scroll-arrow { display: none; }
+      .wwa-hero-content { gap: 0; }
       .wwa-hero-content p { font-size: 24px; line-height: 1.7; }
 
       .wwa-philosophy { padding: 72px 24px; }
@@ -195,9 +233,9 @@
       .philosophy-card { text-align: center; padding: 32px 24px; }
 
       .why-choose { padding: 72px 24px; gap: 56px; }
-      .why-choose-grid { flex-direction: column; align-items: center; gap: 48px; }
+      .why-choose-grid { flex-direction: column; align-items: center; flex-wrap: wrap; gap: 48px; }
       .why-choose-heading { font-size: 32px; text-align: center; }
-      .why-choose-block { max-width: 100%; text-align: center; }
+      .why-choose-block { flex: none; max-width: 100%; text-align: center; }
 
       /* Team bio — center all text when stacked single-column */
       .team-bio { text-align: center; align-items: center; }
@@ -212,7 +250,11 @@
     }
 
     @media (max-width: 480px) {
-      .wwa-hero { min-height: 0; padding: 64px 20px; }
+      .wwa-hero {
+        min-height: calc(100vh - var(--nav-height));
+        min-height: calc(100dvh - var(--nav-height));
+        padding: 64px 20px;
+      }
       .wwa-hero-content p { font-size: 20px; line-height: 1.65; }
       .why-choose-heading { font-size: 26px; }
       .philosophy-card { padding: 28px 20px; }
@@ -234,13 +276,13 @@
         <nav aria-label="Main navigation">
           <ul class="nav-links">
             <li><a href="who-we-are.html" aria-current="page">Who We Are</a></li>
-            <li><a href="index.html#who-we-see">Who We See</a></li>
-            <li><a href="index.html#contact">Contact</a></li>
+            <li><a href="who-we-see.html">Who We See</a></li>
+            <li><a href="contact.html">Contact</a></li>
           </ul>
         </nav>
       </div>
 
-      <a href="index.html#contact" class="nav-cta desktop-only">Make a referral</a>
+      <a href="contact.html" class="nav-cta desktop-only">Make a referral</a>
 
       <button class="nav-hamburger" id="nav-hamburger" aria-label="Toggle navigation" aria-expanded="false">
         <span></span>
@@ -252,9 +294,9 @@
 
     <nav class="nav-mobile-menu" id="nav-mobile-menu" aria-label="Mobile navigation">
       <a href="who-we-are.html" aria-current="page">Who We Are</a>
-      <a href="index.html#who-we-see">Who We See</a>
-      <a href="index.html#contact">Contact</a>
-      <a href="index.html#contact" class="nav-cta">Make a referral</a>
+      <a href="who-we-see.html">Who We See</a>
+      <a href="contact.html">Contact</a>
+      <a href="contact.html" class="nav-cta">Make a referral</a>
     </nav>
   </header>
 
@@ -269,6 +311,11 @@
       <div class="wwa-hero-overlay" aria-hidden="true"></div>
       <div class="wwa-hero-content">
         <p>Ever Allied Health is a mobile physiotherapy practice serving older adults and people living with disability across Melbourne's northern and eastern suburbs. We visit clients at home, because that's where life actually happens, and that's where the best care can be delivered.</p>
+        <div class="wwa-scroll-arrow" aria-hidden="true">
+          <svg viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M6 10l8 8 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
       </div>
     </section>
 

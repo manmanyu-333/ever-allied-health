@@ -466,4 +466,100 @@
     watch(el, { fadeOnly: true });
   });
 
+  /* ---------------------------------------------------------------------- */
+  /* 7. h1 section headings (inner pages use h1 not h2)                       */
+  /* ---------------------------------------------------------------------- */
+  document.querySelectorAll('main section h1.section-heading').forEach(function (el) {
+    watch(el);
+  });
+
+  /* ---------------------------------------------------------------------- */
+  /* 8. Inner page subtitle / intro text                                      */
+  /* ---------------------------------------------------------------------- */
+  [
+    '.wws-page-intro-text',
+    '.wws-funding-subtitle',
+    '.wws-service-subtitle',
+  ].forEach(function (sel) {
+    document.querySelectorAll(sel).forEach(function (el) {
+      watch(el, { delay: 100 });
+    });
+  });
+
+  /* ---------------------------------------------------------------------- */
+  /* 9. Client cards — staggered 110ms                                        */
+  /* ---------------------------------------------------------------------- */
+  watchGroup(
+    document.querySelector('.client-grid'),
+    document.querySelectorAll('.client-card'),
+    110
+  );
+  watchGroup(
+    document.querySelector('.wws-card-grid'),
+    document.querySelectorAll('.wws-card'),
+    110
+  );
+
+  /* ---------------------------------------------------------------------- */
+  /* 10. Philosophy cards — staggered 110ms                                   */
+  /* ---------------------------------------------------------------------- */
+  watchGroup(
+    document.querySelector('.philosophy-cards'),
+    document.querySelectorAll('.philosophy-card'),
+    110
+  );
+
+  /* ---------------------------------------------------------------------- */
+  /* 11. Why Choose blocks — staggered 150ms                                  */
+  /* ---------------------------------------------------------------------- */
+  watchGroup(
+    document.querySelector('.why-choose-grid'),
+    document.querySelectorAll('.why-choose-block'),
+    150
+  );
+
+  /* ---------------------------------------------------------------------- */
+  /* 12. Feature blocks (Who We Are section) — staggered 110ms               */
+  /* ---------------------------------------------------------------------- */
+  watchGroup(
+    document.querySelector('.feature-grid'),
+    document.querySelectorAll('.feature-block'),
+    110
+  );
+
+  /* ---------------------------------------------------------------------- */
+  /* 13. Funding list items — staggered 70ms                                  */
+  /* ---------------------------------------------------------------------- */
+  watchGroup(
+    document.querySelector('.wws-funding-list'),
+    document.querySelectorAll('.wws-funding-list li'),
+    70
+  );
+
+  /* ---------------------------------------------------------------------- */
+  /* 14. Suburb groups — staggered 200ms                                      */
+  /* ---------------------------------------------------------------------- */
+  watchGroup(
+    document.querySelector('.wws-suburb-groups'),
+    document.querySelectorAll('.suburb-group'),
+    200
+  );
+
+  /* ---------------------------------------------------------------------- */
+  /* 15. Refer steps (contact page) — stagger 280ms so they appear            */
+  /*     one by one when the list enters the viewport                         */
+  /* ---------------------------------------------------------------------- */
+  watchGroup(
+    document.querySelector('.refer-steps-list'),
+    document.querySelectorAll('.refer-step-item'),
+    280
+  );
+
+  /* ---------------------------------------------------------------------- */
+  /* 16. Closing lines and callout banners — fade only                        */
+  /* ---------------------------------------------------------------------- */
+  document.querySelectorAll('.refer-closing, .wws-service-callout, .wws-funding-image').forEach(function (el) {
+    watch(el, { fadeOnly: true, delay: 80 });
+  });
+
 }());
