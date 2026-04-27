@@ -1,15 +1,18 @@
 # Ever Allied Health — Claude Context
 
 ## What this project is
-Static marketing website for Ever Allied Health, a mobile physiotherapy practice in Melbourne run by Vanessa Tam. One-page site with anchored sections. No framework, no build step — plain HTML/CSS/JS.
+Static marketing website for Ever Allied Health, a mobile physiotherapy practice in Melbourne run by Vanessa Tam. Three-page site. No framework, no build step — plain HTML/CSS/JS.
 
 Production domain: **everalliedhealth.com.au**
 
 ---
 
-## Tech stack
-- `index.html` — single page, all sections
-- `styles.css` — all styles, desktop-first (1440px), breakpoints at 1024px and 768px
+## Site structure
+- `index.html` — home page (hero, values, stats, who-we-see preview, contact)
+- `who-we-are.html` — page 2 (hero, our philosophy, why choose us, meet the team)
+- `who-we-see.html` — page 3 (client types, funding, service area, how to refer)
+- `contact.html` — contact page (referral steps, contact form)
+- `styles.css` — shared styles, desktop-first (1440px), breakpoints at 1024px and 768px
 - `script.js` — bokeh canvas animation, mobile nav, scroll reveal, Formspree contact form
 - `assets/` — SVG icons, logo, hero-bg.jpg, team photo placeholder
 - No build step, no package manager, no framework
@@ -73,7 +76,43 @@ Fields: name, contact (phone or email), suburb, funding_type (select), notes.
 
 ---
 
-## What's still placeholder / TODO (as of last session)
+## Card style system
+Three named card styles are used across the site. Always use these names consistently:
+
+**Style 1 — Icon card** (e.g. `.value-block` on `index.html`, `.why-choose-block` on `who-we-are.html`)
+- `background: transparent`
+- `border: 1px solid rgba(180, 165, 140, 0.55)` — warm tan
+- `border-radius: 4px`, `padding: 40px`, `min-height: 460px`
+- Icon: 60×60px, `margin-bottom: 48px`, gold stroke `var(--stroke-0, #B8962E)` at `stroke-width="1.5"`
+- `::after` pseudo-element: 1px horizontal rule near bottom, same tan colour
+- Text: `var(--color-olive-mid)`, left-aligned
+
+**Style 2 — Outlined card** (e.g. `.client-card` on `index.html`, `.philosophy-card` on `who-we-are.html`, `.wws-card` on `who-we-see.html`)
+- No background fill
+- `border: 1px solid var(--color-dark-green)`
+- `border-radius: 4px`
+- Text: `var(--color-dark-green)` for both h3 and p
+
+**Style 3 — Filled card** (plain white, used sparingly)
+- `background: var(--color-white)`, no border, no radius
+
+---
+
+## Section background colours
+- Cream/warm: `#faf1eb` — used for values, who-we-see cards, service area, why-choose, contact refer
+- White: `#ffffff` — used for philosophy section background (`--color-cream-mid`)
+- Dark green: `#45441a` — formerly used for why-choose (now replaced with cream)
+
+---
+
+## Suburb pills (who-we-see.html — Service Area)
+- `border: 1.5px solid #45441a`, `border-radius: 4px`
+- `background: rgba(255, 255, 255, 0.2)` — 20% white over cream bg
+- Callout banner (`.wws-service-callout`): `border-left: 2px solid var(--color-dark-green)`
+
+---
+
+## What's still placeholder / TODO
 - Team photo (`assets/team-photo.png`) is a placeholder div — real photo not yet added
 - Google Maps embed in the Service Area section is a placeholder
 - `og-image.jpg` for Open Graph sharing not yet created
