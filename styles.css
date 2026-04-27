@@ -1367,6 +1367,20 @@ a {
   color: rgba(255, 255, 255, 0.65);
 }
 
+.site-footer-meta {
+  margin-top: 20px;
+  line-height: 2;
+}
+
+.site-footer-meta a {
+  color: rgba(255, 255, 255, 0.65);
+  text-decoration: none;
+}
+
+.site-footer-meta a:hover {
+  color: #ffffff;
+}
+
 .site-footer-nav {
   display: flex;
   flex-direction: column;
