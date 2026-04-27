@@ -36,6 +36,7 @@
     .refer-steps-list {
       display: flex;
       flex-direction: column;
+      gap: 12px;
       width: 100%;
       max-width: 720px;
     }
@@ -44,12 +45,9 @@
       display: grid;
       grid-template-columns: 80px 1fr;
       gap: 24px;
-      padding: 24px 0;
-      border-bottom: 1px solid rgba(69, 68, 17, 0.10);
-    }
-
-    .refer-step-item:first-child {
-      border-top: 1px solid rgba(69, 68, 17, 0.10);
+      padding: 24px 28px;
+      border: 1px solid rgba(69, 68, 17, 0.10);
+      border-radius: 4px;
     }
 
     .refer-step-num {
@@ -103,7 +101,7 @@
     @media (max-width: 768px) {
       .contact-refer { padding: 56px 24px; }
       .refer-steps-list { max-width: 100%; }
-      .refer-step-item { grid-template-columns: 56px 1fr; gap: 16px; padding: 32px 0; }
+      .refer-step-item { grid-template-columns: 56px 1fr; gap: 16px; padding: 24px 20px; }
       .refer-step-num { font-size: 36px; }
       .refer-closing { font-size: 18px; }
 
@@ -114,8 +112,9 @@
     }
 
     @media (max-width: 480px) {
-      .refer-step-item { grid-template-columns: 48px 1fr; }
+      .refer-step-item { grid-template-columns: 48px 1fr; padding: 20px 16px; }
       .refer-step-num { font-size: 30px; }
+      .refer-steps-list { gap: 8px; }
     }
   </style>
 </head>

@@ -1598,7 +1598,11 @@ a {
    RESPONSIVE — Small mobile (≤480px)
    ========================================================================== */
 @media (max-width: 480px) {
+  .nav-inner { padding: 0 16px; }
   .hero-content h1 { font-size: 32px; }
+  .hero-content { padding: 64px 20px; }
+  .hero-ctas { flex-direction: column; align-items: center; gap: 12px; }
+  .btn-primary, .btn-outline-white { width: 100%; max-width: 280px; text-align: center; justify-content: center; }
   .values-intro { font-size: 22px; }
   .values-tagline { font-size: 22px; }
   .stat-block .stat-number { font-size: 48px; }

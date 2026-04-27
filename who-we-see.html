@@ -96,7 +96,27 @@
       display: flex;
       flex-direction: column;
       align-items: center;
+      gap: 0;
+    }
+
+    .wws-funding-inner {
+      display: grid;
+      grid-template-columns: 1fr 502px;
       gap: 48px;
+      align-items: start;
+      width: 100%;
+    }
+
+    .wws-funding-content {
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+      align-items: flex-start;
+      padding-top: 4px;
+    }
+
+    .wws-funding-content .section-heading {
+      margin-bottom: 0;
     }
 
     .wws-funding-subtitle {
@@ -105,7 +125,6 @@
       font-weight: 400;
       line-height: 1.6;
       color: var(--color-olive-mid);
-      text-align: center;
     }
 
     .wws-funding-list {
@@ -114,7 +133,6 @@
       flex-direction: column;
       gap: 22px;
       width: 100%;
-      max-width: 540px;
     }
 
     .wws-funding-list li {
@@ -134,24 +152,17 @@
     }
 
     .wws-funding-image {
-      width: 100%;
-      max-width: 612px;
-      aspect-ratio: 16 / 9;
-      background: #ddd8cf;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: var(--font-sans);
-      font-size: 13px;
-      color: #999;
-      text-align: center;
       overflow: hidden;
+      height: 627px;
+      background: var(--color-cream-mid);
     }
 
     .wws-funding-image img {
       width: 100%;
       height: 100%;
       object-fit: cover;
+      display: block;
+      filter: saturate(0.8);
     }
 
     /* ------------------------------------------------------------------
@@ -341,8 +352,10 @@
     @media (max-width: 1024px) {
       .wws-page-intro { padding: 100px 32px 64px; }
       .wws-cards { padding: 0 32px 100px; }
-      .wws-funding .container { gap: 40px; }
+      .wws-funding-inner { grid-template-columns: 1fr 1fr; }
+      .wws-funding-image { height: 500px; }
       .wws-suburb-groups { gap: 48px; }
+      .suburb-pills { grid-template-columns: repeat(2, 1fr); }
       .wws-refer-step { grid-template-columns: 80px 1fr; }
       .wws-step-number { font-size: 40px; }
     }
@@ -359,8 +372,8 @@
       .wws-card { padding: 32px 28px; }
 
       .wws-funding { padding: 72px 24px; }
-      .wws-funding-list { max-width: 100%; }
-      .wws-funding-image { max-width: 100%; }
+      .wws-funding-inner { grid-template-columns: 1fr; gap: 40px; }
+      .wws-funding-image { height: 320px; }
 
       .wws-service-area { padding: 72px 24px; }
       .suburb-pills { grid-template-columns: repeat(2, 1fr); }
@@ -379,6 +392,9 @@
     @media (max-width: 480px) {
       .wws-card { padding: 28px 20px; }
       .wws-refer-closing { font-size: 18px; }
+      .suburb-pill { padding: 12px 14px; }
+      .suburb-pills { gap: 8px; }
+      .wws-funding-content .section-heading { font-size: 30px; }
     }
   </style>
 </head>
@@ -471,20 +487,91 @@
     <section class="wws-funding" id="funding" aria-label="Funding and access">
       <div class="container">
 
-        <h2 class="section-heading">Funding and Access</h2>
+        <div class="wws-funding-inner">
 
-        <p class="wws-funding-subtitle">We accept clients through the following funding streams:</p>
+          <div class="wws-funding-content">
+            <h2 class="section-heading">Funding and Access</h2>
+            <p class="wws-funding-subtitle">We accept clients through the following funding streams:</p>
 
-        <ul class="wws-funding-list">
-          <li>NDIS (self-managed, plan-managed and NDIA-managed)</li>
-          <li>My Aged Care Home Care Packages (HCP)</li>
-          <li>Support at Home (Commonwealth Home Support Programme)</li>
-          <li>Chronic Disease Management / GP Management Plans (gap may apply)</li>
-          <li>Private (fee for service)</li>
-        </ul>
+            <div class="contact-detail-cards">
 
-        <div class="wws-funding-image" aria-hidden="true">
-          Photo placeholder
+              <div class="contact-detail-card">
+                <div class="contact-card-icon-wrap">
+                  <div class="contact-card-icon">
+                    <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                      <path d="M8 1.5L9.5 6.1H14.2L10.4 8.8L11.8 13.5L8 10.8L4.2 13.5L5.6 8.8L1.8 6.1H6.5Z" stroke="#ba9f38" stroke-width="1.2" stroke-linejoin="round"/>
+                    </svg>
+                  </div>
+                </div>
+                <div class="contact-card-text">
+                  <span class="contact-card-label">NDIS</span>
+                  <span class="contact-card-value">Self-managed, plan-managed and NDIA-managed</span>
+                </div>
+              </div>
+
+              <div class="contact-detail-card">
+                <div class="contact-card-icon-wrap">
+                  <div class="contact-card-icon">
+                    <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                      <path d="M8 1.5L9.5 6.1H14.2L10.4 8.8L11.8 13.5L8 10.8L4.2 13.5L5.6 8.8L1.8 6.1H6.5Z" stroke="#ba9f38" stroke-width="1.2" stroke-linejoin="round"/>
+                    </svg>
+                  </div>
+                </div>
+                <div class="contact-card-text">
+                  <span class="contact-card-label">My Aged Care HCP</span>
+                  <span class="contact-card-value">Home Care Packages</span>
+                </div>
+              </div>
+
+              <div class="contact-detail-card">
+                <div class="contact-card-icon-wrap">
+                  <div class="contact-card-icon">
+                    <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                      <path d="M8 1.5L9.5 6.1H14.2L10.4 8.8L11.8 13.5L8 10.8L4.2 13.5L5.6 8.8L1.8 6.1H6.5Z" stroke="#ba9f38" stroke-width="1.2" stroke-linejoin="round"/>
+                    </svg>
+                  </div>
+                </div>
+                <div class="contact-card-text">
+                  <span class="contact-card-label">Support at Home</span>
+                  <span class="contact-card-value">Commonwealth Home Support Programme</span>
+                </div>
+              </div>
+
+              <div class="contact-detail-card">
+                <div class="contact-card-icon-wrap">
+                  <div class="contact-card-icon">
+                    <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                      <path d="M8 1.5L9.5 6.1H14.2L10.4 8.8L11.8 13.5L8 10.8L4.2 13.5L5.6 8.8L1.8 6.1H6.5Z" stroke="#ba9f38" stroke-width="1.2" stroke-linejoin="round"/>
+                    </svg>
+                  </div>
+                </div>
+                <div class="contact-card-text">
+                  <span class="contact-card-label">Chronic Disease Management</span>
+                  <span class="contact-card-value">GP Management Plans — gap may apply</span>
+                </div>
+              </div>
+
+              <div class="contact-detail-card">
+                <div class="contact-card-icon-wrap">
+                  <div class="contact-card-icon">
+                    <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                      <path d="M8 1.5L9.5 6.1H14.2L10.4 8.8L11.8 13.5L8 10.8L4.2 13.5L5.6 8.8L1.8 6.1H6.5Z" stroke="#ba9f38" stroke-width="1.2" stroke-linejoin="round"/>
+                    </svg>
+                  </div>
+                </div>
+                <div class="contact-card-text">
+                  <span class="contact-card-label">Private</span>
+                  <span class="contact-card-value">Fee for service</span>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="wws-funding-image">
+            <img src="assets/vanessa-2.svg" alt="Vanessa Tam, physiotherapist with a client" />
+          </div>
+
         </div>
 
       </div>
