@@ -426,7 +426,7 @@ a {
   text-align: left;
   background: transparent;
   border: 1px solid rgba(180, 165, 140, 0.55);
-  border-radius: 12px;
+  border-radius: 4px;
   padding: 40px;
   position: relative;
   min-height: 460px;
@@ -1089,7 +1089,7 @@ a {
    Contact / Footer
    -------------------------------------------------------------------------- */
 .contact-footer {
-  background: var(--color-dark-green);
+  background: #ffffff;
   padding: 100px 24px 0;
 }
 
@@ -1101,7 +1101,7 @@ a {
 }
 
 .contact-footer .section-heading {
-  color: var(--color-cream);
+  color: var(--color-dark-green);
   text-align: left;
 }
 
@@ -1110,10 +1110,14 @@ a {
   font-size: 20px;
   font-weight: 400;
   line-height: 1.7;
-  color: var(--color-cream);
+  color: var(--color-olive-mid);
   margin-top: 16px;
-  opacity: 0.95;
+  opacity: 0.85;
   text-align: left;
+}
+
+.contact-header {
+  margin-bottom: 40px;
 }
 
 /* Two-column layout */
@@ -1121,29 +1125,33 @@ a {
   display: grid;
   grid-template-columns: 1fr 1.15fr;
   gap: 80px;
-  align-items: start;
+  align-items: stretch;
 }
 
 .contact-col-left {
   display: flex;
   flex-direction: column;
   gap: 0;
-  padding-top: 8px;
+  padding-top: 25px;
+}
+
+.contact-col-right {
+  display: flex;
+  flex-direction: column;
 }
 
 .contact-detail-cards {
   display: flex;
   flex-direction: column;
   gap: 12px;
-  margin-top: 32px;
 }
 
 .contact-detail-card {
   display: flex;
   align-items: flex-start;
   gap: 16px;
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(245, 232, 213, 0.15);
+  background: rgba(69, 68, 17, 0.04);
+  border: 1px solid rgba(69, 68, 17, 0.15);
   border-radius: 12px;
   padding: 18px 20px;
   text-decoration: none;
@@ -1151,7 +1159,7 @@ a {
 }
 
 .contact-detail-card:hover {
-  background: rgba(255, 255, 255, 0.10);
+  background: rgba(69, 68, 17, 0.08);
 }
 
 .contact-card-icon-wrap {
@@ -1197,24 +1205,25 @@ a {
   font-family: var(--font-sans);
   font-size: 15px;
   font-weight: 500;
-  color: var(--color-cream);
+  color: var(--color-dark-green);
 }
 
 .contact-card-sub {
   font-family: var(--font-sans);
   font-size: 12px;
   font-weight: 400;
-  color: rgba(245, 232, 213, 0.55);
+  color: rgba(69, 68, 17, 0.55);
   margin-top: 1px;
 }
 
 /* Accent card */
 .contact-accent-card {
-  background: rgba(255, 255, 255, 0.07);
-  border: 1px solid rgba(245, 232, 213, 0.15);
+  background: rgba(69, 68, 17, 0.04);
+  border: 1px solid rgba(69, 68, 17, 0.15);
   border-radius: 12px;
   padding: 22px 20px;
   margin-top: 12px;
+  flex: 1;
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -1237,7 +1246,7 @@ a {
   font-size: 18px;
   font-weight: 400;
   line-height: 1.3;
-  color: var(--color-cream);
+  color: var(--color-dark-green);
 }
 
 .contact-accent-card p {
@@ -1245,7 +1254,7 @@ a {
   font-size: 13px;
   font-weight: 400;
   line-height: 1.6;
-  color: rgba(245, 232, 213, 0.70);
+  color: rgba(69, 68, 17, 0.65);
 }
 
 .contact-ctas {
@@ -1289,14 +1298,14 @@ a {
   font-size: 15px;
   font-weight: 400;
   line-height: 1.7;
-  color: var(--color-cream);
-  opacity: 0.8;
+  color: var(--color-dark-green);
+  opacity: 0.65;
   margin: 64px 0 0;
   text-align: center;
 }
 
 .contact-footer-bar {
-  border-top: 1px solid rgba(245, 232, 213, 0.2);
+  border-top: 1px solid rgba(69, 68, 17, 0.15);
   margin-top: 48px;
   padding: 24px 0 28px;
 }
@@ -1306,8 +1315,8 @@ a {
   font-size: 15px;
   font-weight: 400;
   line-height: 1.5;
-  color: var(--color-cream);
-  opacity: 0.6;
+  color: var(--color-dark-green);
+  opacity: 0.5;
   text-align: center;
 }
 
@@ -1318,6 +1327,18 @@ a {
   display: flex;
   flex-direction: column;
   gap: 14px;
+  flex: 1;
+}
+
+.form-group--grow {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group--grow textarea {
+  flex: 1;
+  resize: none;
 }
 
 .form-row-2 {
@@ -1336,7 +1357,7 @@ a {
   font-family: var(--font-sans);
   font-size: 13px;
   font-weight: 500;
-  color: var(--color-cream);
+  color: var(--color-dark-green);
   text-align: left;
 }
 
@@ -1346,15 +1367,15 @@ a {
   font-family: var(--font-sans);
   font-size: 16px;
   padding: 12px 16px;
-  border: 1px solid rgba(245, 232, 213, 0.3);
-  background: rgba(255, 255, 255, 0.05);
-  color: var(--color-cream);
+  border: 1px solid rgba(69, 68, 17, 0.22);
+  background: rgba(69, 68, 17, 0.03);
+  color: var(--color-dark-green);
   transition: border-color 0.2s, background 0.2s;
 }
 
 .form-group input::placeholder,
 .form-group textarea::placeholder {
-  color: rgba(245, 232, 213, 0.5);
+  color: rgba(69, 68, 17, 0.35);
 }
 
 .form-group input:focus,
@@ -1362,14 +1383,14 @@ a {
 .form-group textarea:focus {
   outline: none;
   border-color: var(--color-gold);
-  background: rgba(255, 255, 255, 0.08);
+  background: rgba(69, 68, 17, 0.05);
 }
 
 .form-group input.form-field-error,
 .form-group select.form-field-error,
 .form-group textarea.form-field-error {
   border-color: #ba9f38;
-  background: rgba(184, 150, 46, 0.1);
+  background: rgba(184, 150, 46, 0.08);
 }
 
 .form-error {
@@ -1383,7 +1404,7 @@ a {
 .form-group select {
   cursor: pointer;
   appearance: none;
-  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23f5e8d5' stroke-width='2'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2345441a' stroke-width='2'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
   background-repeat: no-repeat;
   background-position: right 12px center;
   background-size: 20px;
@@ -1412,15 +1433,15 @@ a {
   font-family: var(--font-serif);
   font-size: 36px;
   font-weight: 400;
-  color: var(--color-cream);
+  color: var(--color-dark-green);
   margin-bottom: 16px;
 }
 
 .form-success-message p {
   font-family: var(--font-sans);
   font-size: 18px;
-  color: var(--color-cream);
-  opacity: 0.9;
+  color: var(--color-dark-green);
+  opacity: 0.8;
 }
 
 /* Error Message */
