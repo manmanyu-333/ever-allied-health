@@ -1620,8 +1620,8 @@ a {
   /* Values */
   .values { padding: 72px 24px; gap: 56px; }
   .values-grid { flex-direction: column; align-items: center; flex-wrap: wrap; gap: 24px; }
-  .value-block { flex: none; width: 100%; max-width: 560px; min-height: unset; }
-  .value-block::after { bottom: 28px; left: 28px; right: 28px; }
+  .value-block { flex: none; width: 100%; max-width: 560px; min-height: unset; padding: 24px; }
+  .value-block::after { bottom: 20px; left: 24px; right: 24px; }
   .values-tagline { font-size: 28px; }
 
   /* Stats */
@@ -1657,15 +1657,17 @@ a {
 
   /* Who We See */
   .who-we-see { padding: 72px 24px; }
+  .who-we-see .container { padding: 0; }
   .who-we-see-header { gap: 32px; }
   .client-grid { grid-template-columns: 1fr; gap: 16px; }
+  .client-card { padding: 24px; }
   .who-we-see-intro { font-size: 17px; }
   .who-we-see-buttons { flex-direction: column; align-items: stretch; }
   .btn-wws-primary, .btn-wws-outline { width: 100%; max-width: none; }
 
   /* Funding */
   .funding { padding: 72px 24px; }
-  .funding .container { max-width: 100%; }
+  .funding .container { max-width: 100%; padding: 0; }
 
   /* Service Area */
   .service-area { padding: 72px 24px; }
@@ -1680,6 +1682,7 @@ a {
 
   /* Contact */
   .contact-footer { padding: 72px 24px 64px; }
+  .contact-footer .container { padding: 0; }
   .contact-footer .section-heading { font-size: 32px; text-align: center; }
   .contact-subtitle { font-size: 17px; text-align: center; }
   .contact-ctas { gap: 16px; }
