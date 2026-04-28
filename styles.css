@@ -1609,9 +1609,9 @@ a {
 
   /* Hero */
   .hero-bg-photo { background-position: 70% center; }
-  .hero-content h1 { font-size: 40px; }
-  .hero-content .hero-tagline { font-size: 17px; }
-  .hero-content { padding: 80px 24px; }
+  .hero-content h1 { font-size: 40px; text-align: center; }
+  .hero-content .hero-tagline { font-size: 17px; text-align: center; }
+  .hero-content { padding: 80px 24px; text-align: center; }
   .btn-primary, .btn-outline-white { padding: 14px 20px; font-size: 12px; height: auto; }
 
   /* Intro text */
@@ -1703,8 +1703,8 @@ a {
    ========================================================================== */
 @media (max-width: 480px) {
   .nav-inner { padding: 0 16px; }
-  .hero-content h1 { font-size: 32px; }
-  .hero-content { padding: 64px 20px; }
+  .hero-content h1 { font-size: 32px; text-align: center; }
+  .hero-content { padding: 64px 20px; text-align: center; }
   .hero-ctas { flex-direction: column; align-items: center; gap: 12px; }
   .btn-primary, .btn-outline-white { width: 100%; max-width: 280px; text-align: center; justify-content: center; }
   .values-intro { font-size: 22px; }
