@@ -66,7 +66,7 @@ git push origin main
 
 No extra auth steps needed — the PAT in the remote URL handles it.
 
-**Hosting pipeline:** The production domain is `everalliedhealth.com.au` — ask Amanda how pushes get deployed (Netlify, GitHub Pages, manual FTP, etc.) as this wasn't confirmed during setup.
+**Hosting pipeline:** The production domain is `everalliedhealth.com.au`, hosted on **Vercel**. Vercel auto-deploys on every push to `main` (no `vercel.json` in the repo — uses defaults for a static site). A static deploy completes in roughly 30 seconds. After deploy, do a hard refresh (Cmd+Shift+R) to bust browser cache for HTML; if the page still looks stale, check the Vercel dashboard to confirm the latest commit deployed successfully.
 
 ---
 
