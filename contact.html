@@ -288,38 +288,33 @@
 
             <div class="form-row-2">
               <div class="form-group">
-                <label for="name">Referrer / Client Name *</label>
-                <input type="text" id="name" name="name" required aria-required="true">
+                <label for="referrer_name">Referrer name *</label>
+                <input type="text" id="referrer_name" name="referrer_name" required aria-required="true" placeholder="Case manager, support co-ordinator, org">
                 <span class="form-error"></span>
               </div>
               <div class="form-group">
-                <label for="contact">Phone or Email *</label>
-                <input type="text" id="contact" name="contact" required aria-required="true" placeholder="0412 345 678">
+                <label for="referrer_phone">Referrer phone *</label>
+                <input type="tel" id="referrer_phone" name="referrer_phone" required aria-required="true">
                 <span class="form-error"></span>
               </div>
             </div>
 
             <div class="form-row-2">
               <div class="form-group">
-                <label for="suburb">Suburb (Melbourne) *</label>
-                <input type="text" id="suburb" name="suburb" required aria-required="true" placeholder="e.g., Rosanna">
+                <label for="referrer_email">Referrer email *</label>
+                <input type="email" id="referrer_email" name="referrer_email" required aria-required="true">
                 <span class="form-error"></span>
               </div>
               <div class="form-group">
-                <label for="funding_type">Funding Type *</label>
-                <select id="funding_type" name="funding_type" required aria-required="true">
-                  <option value="">— Select —</option>
-                  <option value="Support at Home">Support at Home (SAH)</option>
-                  <option value="NDIS">NDIS (plan-managed or self-managed)</option>
-                  <option value="Private">Private</option>
-                </select>
+                <label for="client_suburb">Client suburb *</label>
+                <input type="text" id="client_suburb" name="client_suburb" required aria-required="true">
                 <span class="form-error"></span>
               </div>
             </div>
 
             <div class="form-group form-group--grow">
-              <label for="notes">Notes (client details, goals, mobility context) *</label>
-              <textarea id="notes" name="notes" required aria-required="true" rows="3" placeholder="Tell us about your client..."></textarea>
+              <label for="notes">Notes *</label>
+              <textarea id="notes" name="notes" required aria-required="true" rows="3" placeholder="Client details, reason for referral, goals, scheduling requirements"></textarea>
               <span class="form-error"></span>
             </div>
 

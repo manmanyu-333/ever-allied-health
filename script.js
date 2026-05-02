@@ -319,10 +319,10 @@
     submitBtn.disabled = true;
 
     const data = {
-      name: form.querySelector('[name="name"]').value,
-      contact: form.querySelector('[name="contact"]').value,
-      suburb: form.querySelector('[name="suburb"]').value,
-      funding_type: form.querySelector('[name="funding_type"]').value,
+      referrer_name: form.querySelector('[name="referrer_name"]').value,
+      referrer_phone: form.querySelector('[name="referrer_phone"]').value,
+      referrer_email: form.querySelector('[name="referrer_email"]').value,
+      client_suburb: form.querySelector('[name="client_suburb"]').value,
       notes: form.querySelector('[name="notes"]').value
     };
 
